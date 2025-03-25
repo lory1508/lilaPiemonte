@@ -1,4 +1,7 @@
 {
+  "generalSettings": {
+    "logo": "/LogoLilaPiemonte_bianco_BG-trasparente.png"
+  },
   "menu": {
     "linksLeft": [
       {
