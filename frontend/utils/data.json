@@ -49,7 +49,7 @@
   },
   "home": {
     "hero": {
-      "imgBackground": "/images/logo.png",
+      "imgBackground": "/LogoLilaPiemonte_bianco_BG-trasparente.png",
       "title": "LILA Piemonte",
       "content": [
         "Lega Italiana per la Lotta contro l'AIDS",
@@ -60,12 +60,16 @@
     "nextEvent": {
       "title": "Il nostro prossimo evento",
       "event": {
-        "cover": "/images/eventMockup.png",
+        "cover": {
+          "url": "images/events/Novembre2024.png",
+          "alt": "European testing week 2024"
+        },
         "title": "European testing week 2024",
         "date": "18/11/2024",
         "startTime": "18:00",
         "endTime": "21:00",
-        "location": "Via Mazzini 11, Torino"
+        "location": "Via Mazzini 11, Torino",
+        "button": "Aggiungi al calendario"
       }
     },
     "cards": [

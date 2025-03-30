@@ -19,8 +19,26 @@ h6 {
   font-style: normal;
 }
 
-.sharp-shadow {
+.sharp-shadow-sm {
   box-shadow: -4px 4px 0px 0px;
   -webkit-box-shadow: -4px 4px 0px 0px;
   -moz-box-shadow: -4px 4px 0px 0px;
+}
+
+.sharp-shadow-md {
+  box-shadow: -6px 6px 0px 0px;
+  -webkit-box-shadow: -6px 6px 0px 0px;
+  -moz-box-shadow: -6px 6px 0px 0px;
+}
+
+.sharp-shadow-lg {
+  box-shadow: -8px 8px 0px 0px;
+  -webkit-box-shadow: -8px 8px 0px 0px;
+  -moz-box-shadow: -8px 8px 0px 0px;
+}
+
+.sharp-shadow-xl {
+  box-shadow: -10px 10px 0px 0px;
+  -webkit-box-shadow: -10px 10px 0px 0px;
+  -moz-box-shadow: -10px 10px 0px 0px;
 }
