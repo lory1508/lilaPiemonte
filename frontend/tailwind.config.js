@@ -8,6 +8,22 @@ export default {
     './app.vue',
     './error.vue',
   ],
+  safelist: [
+    'bg-paleRed',
+    'bg-brickRed',
+    'bg-softWarmRed',
+    'bg-deepMaroon',
+    'bg-lightRed',
+    'bg-crimson',
+    'bg-customRed',
+    'text-paleRed',
+    'text-brickRed',
+    'text-softWarmRed',
+    'text-deepMaroon',
+    'text-lightRed',
+    'text-crimson',
+    'text-customRed',
+  ],
   theme: {
     extend: {
       colors: {

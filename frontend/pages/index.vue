@@ -20,6 +20,21 @@
           :location="nextEvent.event.location"
         />
       </div>
+
+      <div
+        class="grid items-center justify-center w-full grid-cols-3 gap-4 px-4 py-8 border-black border-dashed border-y-4 bg-lightRed"
+      >
+        <div v-for="(card, index) in cards" :key="`card_${index}`">
+          <ServiceCard
+            :title="card?.title"
+            :content="card?.content"
+            :img="card?.img"
+            :link="card?.link"
+            :color="card?.color"
+            :special-content="card?.specialContent"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>

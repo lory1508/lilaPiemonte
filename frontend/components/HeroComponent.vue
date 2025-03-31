@@ -8,9 +8,7 @@
       <div class="flex flex-col w-1/3 gap-16 text-white">
         <h1 class="text-6xl font-bold uppercase">{{ title }}</h1>
         <div class="flex flex-col gap-4">
-          <div v-for="(item, index) in content" :key="`hero_content_${index}`">
-            {{ item }}
-          </div>
+          <div v-for="(item, index) in content" :key="`hero_content_${index}`" v-html="item" />
         </div>
       </div>
     </div>

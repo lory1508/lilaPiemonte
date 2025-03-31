@@ -54,7 +54,7 @@
       "content": [
         "Lega Italiana per la Lotta contro l'AIDS",
         "Il nostro obiettivo è promuovere e tutelare il diritto alla salute, affermare principi e relazioni di solidarietà, lottare contro ogni forma di violazione dei diritti umani, civili e di cittadinanza delle persone con HIV o con AIDS e delle comunità più colpite dall'infezione.",
-        "La LILA, Lega Italiana per la Lotta contro l'AIDS, è un'associazione senza scopo di lucro, nata nel 1987, che agisce sull'intero territorio nazionale attraverso le sue sedi locali.Essa è costituita da una federazione di associazioni e gruppi di volontariato composti da persone sieropositive e non, volontari e professionisti, ed è organizzata attraverso:<br/>una sede nazionale, con aree di servizio, finalizzata alla ricerca sulle terapie, sui comportamenti, sull'assistenza e sulla prevenzione. La sede nazionale opera per uno sviluppo delle politiche socio-sanitarie e per la crescita delle sedi che operano territorialmente a livello regionale, provinciale e cittadino.La LILA Piemonte è presente dal 1990 ed è attualmente costituita da 10 soci-volontari."
+        "La LILA, Lega Italiana per la Lotta contro l'AIDS, è un'associazione senza scopo di lucro, nata nel 1987, che agisce sull'intero territorio nazionale attraverso le sue sedi locali.Essa è costituita da una federazione di associazioni e gruppi di volontariato composti da persone sieropositive e non, volontari e professionisti, ed è organizzata attraverso:<br />una sede nazionale, con aree di servizio, finalizzata alla ricerca sulle terapie, sui comportamenti, sull'assistenza e sulla prevenzione. La sede nazionale opera per uno sviluppo delle politiche socio-sanitarie e per la crescita delle sedi che operano territorialmente a livello regionale, provinciale e cittadino.La LILA Piemonte è presente dal 1990 ed è attualmente costituita da 10 soci-volontari."
       ]
     },
     "nextEvent": {
@@ -74,32 +74,38 @@
     },
     "cards": [
       {
+        "color": "softWarmRed",
         "title": "Dona il 5x1000",
         "content": [
-          "Sostieni la LILA Piemonte ODV attraverso il 5x1000",
+          "<strong>Sostieni la LILA Piemonte ODV attraverso il 5x1000</strong>",
           "Chiediamo il tuo contributo per continuare a svolgere le nostre attività di informazione e prevenzione, promuovere il diritto alla salute, sviluppare campagne di sensibilizzazione, tutelare i diritti di persone con HIV o malate di AIDS e offrire un servizio di counseling telefonico, per fare tutto questo abbiamo bisogno di TE",
-          "Per donarci il 5x1000 scrivi il codice fiscale",
-          "97536790013"
+          "Per donarci il 5x1000 scrivi il codice fiscale"
         ],
+        "specialContent": "97536790013",
         "link": {
-          "title": "Scopri di più",
+          "label": "Scopri di più",
           "href": "/dona-5-x-1000"
         }
       },
       {
+        "color": "deepMaroon",
         "title": "Sostienici",
         "content": [
           "Il tuo sostegno attraverso il Volontariato, la Tessera Amico LILA Piemonte, Donazioni in denaro, con il 5 per mille oppure Virtualmente, ci aiuterà a continuare le nostre attività di:",
           "<ul><li>servizio di centralino telefonico, per chiarire dubbi, fornire informazioni corrette;</li><li>progetti di formazione all'interno della scuola per insegnanti e studenti;</li><li>incontri con gli studenti per informare e fare prevenzione sulle tematiche dell'HIV;</li><li>progetti di prevenzione e informazione mirati alla popolazione in generale attraverso creazione e promozione di eventi sul territorio;</li><li>Tutelare i diritti delle persone sieropositive o malate di AIDS;</li></ul>"
         ],
         "link": {
-          "title": "Sostienici",
+          "label": "Sostienici",
           "href": "/sostienici"
         }
       },
       {
+        "color": "softWarmRed",
         "title": "Satispay",
-        "img": "/images/Satispay.jpg"
+        "img": {
+          "url": "/images/satispay.png",
+          "alt": "Satispay"
+        }
       }
     ],
     "services": {
