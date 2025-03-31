@@ -2,12 +2,15 @@
   <div class="flex flex-col">
     <div v-if="loading">LOADING!</div>
     <div v-else class="flex flex-col">
+      <!-- HERO -->
       <HeroComponent
         :background-img="hero.imgBackground"
         background-color="bg-red-700"
         :title="hero.title"
         :content="hero.content"
       />
+
+      <!-- NEXT EVENT -->
       <div class="flex flex-col items-center justify-center gap-4 py-8 bg-paleRed">
         <h2 class="text-5xl font-bold uppercase text-crimson">{{ nextEvent.title }}</h2>
         <EventCard
@@ -21,11 +24,12 @@
         />
       </div>
 
+      <!-- CARDS -->
       <div
         class="grid items-center justify-center w-full grid-cols-3 gap-4 px-4 py-8 border-black border-dashed border-y-4 bg-lightRed"
       >
         <div v-for="(card, index) in cards" :key="`card_${index}`">
-          <ServiceCard
+          <CardComponent
             :title="card?.title"
             :content="card?.content"
             :img="card?.img"
@@ -33,6 +37,27 @@
             :color="card?.color"
             :special-content="card?.specialContent"
           />
+        </div>
+      </div>
+
+      <!-- SERVICES -->
+      <div class="flex flex-col items-center justify-center gap-4 py-8 bg-white">
+        <div class="flex flex-col gap-2">
+          <h2 class="text-5xl font-bold uppercase text-customRed">{{ services.title }}</h2>
+          <div class="flex items-center justify-center text-customRed">{{ services.subtitle }}</div>
+          <div>
+            <div v-for="(service, index) in services.services" :key="`service_${index}`">
+              <ServiceCard
+                :title="service?.title"
+                :subtitle="service?.subtitle"
+                :content="service?.content"
+                :img="service?.img"
+                :link="service?.link"
+                :color="service?.color"
+                :special-content="service?.specialContent"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -49,27 +74,4 @@
   const services = ref(data.home.services)
   const socials = ref(data.home.socials)
   const video = ref(data.home.video)
-
-  // const timeout = (milliseconds) => {
-  //   return new Promise((resolve) => setTimeout(resolve, milliseconds))
-  // }
-  onMounted(async () => {
-    try {
-      loading.value = true
-      // await timeout(2000)
-      // console.log(data)
-      // hero.value = data.home.hero
-      // nextEvent.value = data.home.nextEvent
-      // cards.value = data.home.cards
-      // services.value = data.home.services
-      // socials.value = data.home.socials
-      // video.value = data.home.video
-
-      // console.log(hero.value)
-    } catch (error) {
-      console.error(error)
-    } finally {
-      loading.value = false
-    }
-  })
 </script>

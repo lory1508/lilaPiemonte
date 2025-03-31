@@ -113,7 +113,10 @@
       "subtitle": "Quali servizi offriamo",
       "cards": [
         {
-          "img": "/images/services/cards/progetto-scuole.png",
+          "img": {
+            "url": "/images/services/cards/progetto-scuole.png",
+            "alt": "Progetto scuole"
+          },
           "title": "Progetto scuole",
           "subtitle": "Vuoi organizzare un incontro nella tua scuola?",
           "content": [
@@ -123,7 +126,10 @@
           ]
         },
         {
-          "img": "/images/services/cards/counseling-peer-to-peer.png",
+          "img": {
+            "url": "/images/services/cards/counseling.png",
+            "alt": "Counseling peer to peer"
+          },
           "title": "Counseling peer to peer",
           "subtitle": "Vuoi parlarci di persona?",
           "content": [
@@ -133,7 +139,7 @@
           ]
         },
         {
-          "img": "/images/services/cards/difesa-dei-diritti.png",
+          "img": "/images/services/cards/diritti.png",
           "title": "Difesa dei diritti",
           "subtitle": "Pensi di esser statə discriminatə?",
           "content": [
@@ -143,7 +149,10 @@
           ]
         },
         {
-          "img": "/images/services/cards/sportello-virtuale.png",
+          "img": {
+            "url": "/images/services/cards/sportello-virtuale.png",
+            "alt": "Sportello virtuale"
+          },
           "title": "sportello virtuale",
           "subtitle": "Hai bisogno del supporto di un avvocato o uno psicologo?",
           "content": [
@@ -156,7 +165,10 @@
           }
         },
         {
-          "img": "/images/services/cards/test-rapidi-hiv.png",
+          "img": {
+            "url": "/images/services/cards/test-rapidi-hiv.png",
+            "alt": "Test rapidi HIV"
+          },
           "title": "test rapidi hiv",
           "subtitle": "Non hai mai fatto un test HIV?",
           "content": [
@@ -169,7 +181,10 @@
           }
         },
         {
-          "img": "/images/services/cards/call-me.png",
+          "img": {
+            "url": "/images/services/cards/call-me.png",
+            "alt": "Call me!"
+          },
           "title": "Call me!",
           "subtitle": "Hai domande sull'HIV? Chiamaci",
           "content": [
