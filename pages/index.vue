@@ -43,10 +43,10 @@
       <!-- SERVICES -->
       <div class="flex flex-col items-center justify-center gap-4 py-8 bg-white">
         <div class="flex flex-col gap-2">
-          <h2 class="text-5xl font-bold uppercase text-customRed">{{ services.title }}</h2>
+          <h2 class="text-5xl font-bold text-center uppercase text-customRed">{{ services.title }}</h2>
           <div class="flex items-center justify-center text-customRed">{{ services.subtitle }}</div>
-          <div>
-            <div v-for="(service, index) in services.services" :key="`service_${index}`">
+          <div class="flex flex-wrap items-start justify-center gap-8 px-8 py-4">
+            <div v-for="(service, index) in services.cards" :key="`service_${index}`">
               <ServiceCard
                 :title="service?.title"
                 :subtitle="service?.subtitle"

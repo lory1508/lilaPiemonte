@@ -1,12 +1,12 @@
 <template>
   <div
-    class="flex flex-col items-center justify-center max-w-lg text-black bg-white border border-black sharp-shadow-lg"
+    class="flex flex-col items-center justify-center max-w-lg text-black bg-white border border-black min-w-96 sharp-shadow-lg"
   >
-    <div class="flex flex-row">
-      <img v-if="img" :src="img.url" :alt="img.alt" width="300" />
+    <div class="flex flex-row items-center py-2">
+      <img v-if="img" :src="img.url" :alt="img.alt" class="h-40" />
       <div class="flex flex-col">
-        <span class="py-12 text-4xl font-semibold uppercase" :class="`text-${color}`">{{ title }}</span>
-        <span class="py-12 text-4xl font-semibold uppercase" :class="`text-${color}`">{{ subtitle }}</span>
+        <span class="text-2xl font-semibold uppercase" :class="`text-${color}`">{{ title }}</span>
+        <span class="text-lg" :class="`text-${color}`">{{ subtitle }}</span>
       </div>
     </div>
     <div class="flex flex-col items-center justify-center w-full gap-4 p-4 text-white" :class="`bg-${color}`">
@@ -18,7 +18,7 @@
       </div>
       <ButtonComponent
         v-if="link"
-        :label="link.label"
+        :label="link.text"
         :color="{ text: 'black', bg: 'white', shadow: 'black' }"
         class="ml-2"
         @click="goto"
@@ -30,6 +30,10 @@
 <script setup>
   const props = defineProps({
     title: {
+      type: String,
+      default: '',
+    },
+    subtitle: {
       type: String,
       default: '',
     },
@@ -55,7 +59,6 @@
     },
   })
 
-  const router = useRouter()
   const slug = ref('')
 
   const slugify = (str) => {
@@ -68,8 +71,18 @@
       .replace(/-+$/, '')
   }
 
-  const goto = () => {
-    router.push(props.link.href)
+  const goto = async () => {
+    console.log()
+    if (props.link.href.split('/')[0] === 'https:' || props.link.href.split('/')[0] === 'http:') {
+      await navigateTo(props.link.href, {
+        external: true,
+        open: {
+          target: '_blank',
+        },
+      })
+    } else {
+      await navigateTo(props.link.href)
+    }
   }
 
   onMounted(() => {

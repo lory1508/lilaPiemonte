@@ -114,7 +114,7 @@
       "cards": [
         {
           "img": {
-            "url": "/images/services/cards/progetto-scuole.png",
+            "url": "/images/services/progetto-scuole.png",
             "alt": "Progetto scuole"
           },
           "title": "Progetto scuole",
@@ -123,11 +123,12 @@
             "LILA Piemonte al fine di continuare la sua costante attività di informazione e prevenzione sull'HIV/AIDS propone incontri rivolti a studenti di istituti superiori di Torino e provincia nel periodo scolastico.",
             "I contenuti e le modalità del nostro intervento vengono concordati con gli insegnanti e vertono sul tema della sessualità e dei comportamenti sicuri coinvolgendo gli studenti in un confronto attivo.",
             "Il progetto è condotto dai volontari LILA."
-          ]
+          ],
+          "color": "softWarmRed"
         },
         {
           "img": {
-            "url": "/images/services/cards/counseling.png",
+            "url": "/images/services/counseling.png",
             "alt": "Counseling peer to peer"
           },
           "title": "Counseling peer to peer",
@@ -136,21 +137,26 @@
             "Se preferisci incontrarci di persona mandaci una mail all'indirizzo infoaids@lilapiemonte.org e concorderemo un appuntamento per farti incontrare con uno dei nostri volontari per chiarire tutti i dubbi che hai e analizzare insieme la situazione.",
             "LILA Piemonte, fin dalla nascita, ha attivo un centralino telefonico fin dalla nascita dell'Associazione che gestisce le richieste di informazione sull'AIDS, difesa dei diritti, orientamento ai Servizi e di sostegno psicologico attraverso una formazione continua degli operatori.",
             "Hai dei dubbi o delle domande sull'HIV ma non vuoi o non puoi parlarne al telefono? Puoi contattare i nostri volontari anche tramite mail scrivendo a infoaids@lilapiemonte.org"
-          ]
+          ],
+          "color": "softWarmRed"
         },
         {
-          "img": "/images/services/cards/diritti.png",
+          "img": {
+            "url": "/images/services/diritti.png",
+            "alt": "Difesa dei diritti"
+          },
           "title": "Difesa dei diritti",
           "subtitle": "Pensi di esser statə discriminatə?",
           "content": [
             "Al progresso scientifico in ordine alla ricerca di un vaccino ed alla sempre maggiore efficacia delle terapie fin qui conseguito,  non ha fatto seguito una crescita culturale tale da poter consentire alle persone con HIV/AIDS di rendersi visibili.",
             "Persistono atteggiamenti di discriminazione e rifiuto dettati dalla paura e dalla scarsa conoscenza della realtà.",
             "LILA Piemonte , consapevole di quanto l'attivismo delle persone con HIV/AIDS sia una componente indispensabile del la lotta contro l'AIDS ed allo stigma che lo accompagna da sempre, offre la possibilità di impegnarsi in prima persona per la difesa dei propri diritti."
-          ]
+          ],
+          "color": "softWarmRed"
         },
         {
           "img": {
-            "url": "/images/services/cards/sportello-virtuale.png",
+            "url": "/images/services/sportello-virtuale.png",
             "alt": "Sportello virtuale"
           },
           "title": "sportello virtuale",
@@ -162,11 +168,12 @@
           "link": {
             "text": "Scopri gli orari",
             "href": "https://www.lila.it/it/sportello-virtuale"
-          }
+          },
+          "color": "softWarmRed"
         },
         {
           "img": {
-            "url": "/images/services/cards/test-rapidi-hiv.png",
+            "url": "/images/services/test-rapidi-hiv.png",
             "alt": "Test rapidi HIV"
           },
           "title": "test rapidi hiv",
@@ -178,11 +185,12 @@
           "link": {
             "text": "Controlla i prossimi eventi",
             "href": "/eventi/test-rapidi"
-          }
+          },
+          "color": "softWarmRed"
         },
         {
           "img": {
-            "url": "/images/services/cards/call-me.png",
+            "url": "/images/services/call-me.png",
             "alt": "Call me!"
           },
           "title": "Call me!",
@@ -194,7 +202,8 @@
           "link": {
             "text": "Scopri gli orari",
             "href": "https://www.lila.it/it/helplilne"
-          }
+          },
+          "color": "softWarmRed"
         }
       ]
     },
