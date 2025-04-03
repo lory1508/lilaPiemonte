@@ -14,6 +14,7 @@ type LazyComponent<T> = (T & DefineComponent<HydrationStrategies, {}, {}, {}, {}
 interface _GlobalComponents {
       'ButtonComponent': typeof import("../components/ButtonComponent.vue")['default']
     'CardComponent': typeof import("../components/CardComponent.vue")['default']
+    'EmbeddedVideo': typeof import("../components/EmbeddedVideo.vue")['default']
     'EventCard': typeof import("../components/EventCard.vue")['default']
     'FooterComponent': typeof import("../components/FooterComponent.vue")['default']
     'HeaderComponent': typeof import("../components/HeaderComponent.vue")['default']
@@ -45,6 +46,7 @@ interface _GlobalComponents {
     'NuxtRouteAnnouncer': IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
       'LazyButtonComponent': LazyComponent<typeof import("../components/ButtonComponent.vue")['default']>
     'LazyCardComponent': LazyComponent<typeof import("../components/CardComponent.vue")['default']>
+    'LazyEmbeddedVideo': LazyComponent<typeof import("../components/EmbeddedVideo.vue")['default']>
     'LazyEventCard': LazyComponent<typeof import("../components/EventCard.vue")['default']>
     'LazyFooterComponent': LazyComponent<typeof import("../components/FooterComponent.vue")['default']>
     'LazyHeaderComponent': LazyComponent<typeof import("../components/HeaderComponent.vue")['default']>
@@ -82,6 +84,7 @@ declare module 'vue' {
 
 export const ButtonComponent: typeof import("../components/ButtonComponent.vue")['default']
 export const CardComponent: typeof import("../components/CardComponent.vue")['default']
+export const EmbeddedVideo: typeof import("../components/EmbeddedVideo.vue")['default']
 export const EventCard: typeof import("../components/EventCard.vue")['default']
 export const FooterComponent: typeof import("../components/FooterComponent.vue")['default']
 export const HeaderComponent: typeof import("../components/HeaderComponent.vue")['default']
@@ -113,6 +116,7 @@ export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components
 export const NuxtRouteAnnouncer: IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
 export const LazyButtonComponent: LazyComponent<typeof import("../components/ButtonComponent.vue")['default']>
 export const LazyCardComponent: LazyComponent<typeof import("../components/CardComponent.vue")['default']>
+export const LazyEmbeddedVideo: LazyComponent<typeof import("../components/EmbeddedVideo.vue")['default']>
 export const LazyEventCard: LazyComponent<typeof import("../components/EventCard.vue")['default']>
 export const LazyFooterComponent: LazyComponent<typeof import("../components/FooterComponent.vue")['default']>
 export const LazyHeaderComponent: LazyComponent<typeof import("../components/HeaderComponent.vue")['default']>

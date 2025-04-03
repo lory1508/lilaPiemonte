@@ -62,7 +62,7 @@
       </div>
 
       <!-- SOCIALS -->
-      <div class="flex flex-col items-center justify-center w-full gap-4 px-4 py-8 text-center border-y-4 bg-crimson">
+      <div class="flex flex-col items-center justify-center w-full gap-4 px-4 py-8 text-center bg-crimson">
         <div class="text-4xl font-bold text-white uppercase">
           {{ socials.title }}
         </div>
@@ -77,6 +77,9 @@
           />
         </div>
       </div>
+
+      <!-- VIDEO -->
+      <EmbeddedVideo :video-id="video.id" />
     </div>
   </div>
 </template>
