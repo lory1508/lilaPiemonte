@@ -29,4 +29,9 @@ export { withCtx, withDirectives, withKeys, withMemo, withModifiers, withScopeId
 export { requestIdleCallback, cancelIdleCallback } from '#app/compat/idle-callback';
 export { setInterval } from '#app/compat/interval';
 export { goto } from '../utils/index';
+export { usePrimeVue } from 'primevue/config';
+export { useStyle } from 'primevue/usestyle';
+export { useConfirm } from 'primevue/useconfirm';
+export { useToast } from 'primevue/usetoast';
+export { useDialog } from 'primevue/usedialog';
 export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composables';
