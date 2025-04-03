@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row text-black bg-white border border-black sharp-shadow-lg">
+  <div class="flex flex-col text-black bg-white border border-black lg:flex-row sharp-shadow-lg">
     <img :src="cover.url" :alt="cover.alt" />
     <div class="flex flex-col gap-4 p-2 text-crimson">
       <div class="text-2xl font-bold uppercase">{{ title }}</div>

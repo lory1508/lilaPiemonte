@@ -12,7 +12,7 @@
 
       <!-- NEXT EVENT -->
       <div class="flex flex-col items-center justify-center gap-4 py-8 bg-paleRed">
-        <h2 class="text-5xl font-bold uppercase text-crimson">{{ nextEvent.title }}</h2>
+        <h2 class="text-5xl font-bold text-center uppercase text-crimson">{{ nextEvent.title }}</h2>
         <EventCard
           :cover="nextEvent.event.cover"
           :title="nextEvent.event.title"
@@ -26,7 +26,7 @@
 
       <!-- CARDS -->
       <div
-        class="grid items-center justify-center w-full grid-cols-3 gap-4 px-4 py-8 border-black border-dashed border-y-4 bg-lightRed"
+        class="grid items-center justify-center w-full grid-cols-1 gap-4 px-4 py-8 border-black border-dashed lg:grid-cols-3 border-y-4 bg-lightRed"
       >
         <div v-for="(card, index) in cards" :key="`card_${index}`">
           <CardComponent
