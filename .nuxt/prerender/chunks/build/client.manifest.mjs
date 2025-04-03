@@ -1,33 +1,33 @@
 const client_manifest = {
-  "_84YVKuqt.js": {
+  "_BAGGRHw_.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "84YVKuqt.js",
+    "file": "BAGGRHw_.js",
     "name": "nuxt-link",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
-  "_ClduScT-.js": {
+  "_C4bEyIOk.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "ClduScT-.js",
-    "name": "v3",
+    "file": "C4bEyIOk.js",
+    "name": "data",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
-  "_U0jTlssG.js": {
+  "_C7jVGIHB.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "U0jTlssG.js",
-    "name": "data",
+    "file": "C7jVGIHB.js",
+    "name": "v3",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
@@ -37,13 +37,13 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "Cfy2h8m2.js",
+    "file": "DvKNAoZ5.js",
     "name": "default",
     "src": "layouts/default.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_84YVKuqt.js",
-      "_U0jTlssG.js",
+      "_BAGGRHw_.js",
+      "_C4bEyIOk.js",
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
@@ -52,14 +52,14 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "BLaxzBGf.js",
+    "file": "CEuZo_JC.js",
     "name": "error-404",
     "src": "node_modules/nuxt/dist/app/components/error-404.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_84YVKuqt.js",
+      "_BAGGRHw_.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_ClduScT-.js"
+      "_C7jVGIHB.js"
     ],
     "css": []
   },
@@ -74,13 +74,13 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "D2YAVLC1.js",
+    "file": "Dkryn_z_.js",
     "name": "error-500",
     "src": "node_modules/nuxt/dist/app/components/error-500.vue",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt/dist/app/entry.js",
-      "_ClduScT-.js"
+      "_C7jVGIHB.js"
     ],
     "css": []
   },
@@ -95,7 +95,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "B8EtgkAp.js",
+    "file": "DQRK_mt6.js",
     "name": "entry",
     "src": "node_modules/nuxt/dist/app/entry.js",
     "isEntry": true,
@@ -112,7 +112,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "JG8xaB-p.js",
+    "file": "tpTj-ch7.js",
     "name": "chi-siamo",
     "src": "pages/chi-siamo.vue",
     "isDynamicEntry": true,
@@ -125,7 +125,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "CLdtEzDZ.js",
+    "file": "i8YWfULg.js",
     "name": "contattaci",
     "src": "pages/contattaci.vue",
     "isDynamicEntry": true,
@@ -138,7 +138,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "NRhgqnEb.js",
+    "file": "pZCSvB50.js",
     "name": "eventi",
     "src": "pages/eventi.vue",
     "isDynamicEntry": true,
@@ -151,13 +151,13 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "cksT_-Kl.js",
+    "file": "y2aWK6Rr.js",
     "name": "index",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt/dist/app/entry.js",
-      "_U0jTlssG.js"
+      "_C4bEyIOk.js"
     ],
     "css": [
       "index.Co_RJe4m.css"
@@ -174,7 +174,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "DgPpGob4.js",
+    "file": "tE_Lb-rZ.js",
     "name": "sostienici",
     "src": "pages/sostienici.vue",
     "isDynamicEntry": true,
@@ -187,7 +187,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "rHh-56Nu.js",
+    "file": "CYqa4sUR.js",
     "name": "volontariato",
     "src": "pages/volontariato.vue",
     "isDynamicEntry": true,

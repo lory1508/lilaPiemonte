@@ -1,6 +1,6 @@
 import { _ as __nuxt_component_0 } from './nuxt-link.mjs';
-import { ref, mergeProps, unref, withCtx, createTextVNode, toDisplayString, createVNode, useSSRContext } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/vue/index.mjs';
-import { ssrRenderAttrs, ssrRenderList, ssrRenderClass, ssrRenderComponent, ssrInterpolate, ssrRenderAttr, ssrRenderSlot } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/vue/server-renderer/index.mjs';
+import { ref, unref, withCtx, createTextVNode, toDisplayString, createVNode, useSSRContext } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/vue/index.mjs';
+import { ssrRenderList, ssrRenderClass, ssrRenderComponent, ssrInterpolate, ssrRenderAttr, ssrRenderAttrs, ssrRenderSlot } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/vue/server-renderer/index.mjs';
 import { Icon } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@iconify/vue/dist/iconify.mjs';
 import { _ as _export_sfc } from './server.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/ufo/dist/index.mjs';
@@ -20,7 +20,7 @@ const _sfc_main$1 = {
     const logo = ref("");
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLink = __nuxt_component_0;
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "fixed flex flex-row justify-between w-full h-16 p-2 text-white bg-black backdrop-blur-md bg-opacity-15" }, _attrs))}><div class="flex flex-row items-center gap-6 montserrat"><!--[-->`);
+      _push(`<!--[--><div class="fixed flex-row justify-between hidden w-full h-16 p-2 text-white bg-black lg:flex backdrop-blur-md bg-opacity-15"><div class="flex flex-row items-center gap-6 montserrat"><!--[-->`);
       ssrRenderList(unref(leftLinks), (ll, index) => {
         _push(`<div class="${ssrRenderClass(ll.active ? "underline font-semibold" : "")}">`);
         _push(ssrRenderComponent(_component_NuxtLink, {
@@ -78,7 +78,12 @@ const _sfc_main$1 = {
         }
         _push(`</div>`);
       });
-      _push(`<!--]--></div></div>`);
+      _push(`<!--]--></div></div><div class="fixed z-50 flex right-8 top-16 lg:hidden">`);
+      _push(ssrRenderComponent(unref(Icon), {
+        icon: "solar:hamburger-menu-bold-duotone",
+        width: "64"
+      }, null, _parent));
+      _push(`</div><!--]-->`);
     };
   }
 };

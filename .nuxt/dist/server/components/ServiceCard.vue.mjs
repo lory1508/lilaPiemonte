@@ -1,13 +1,17 @@
 import _sfc_main$1 from "./ButtonComponent.vue.mjs";
-import { ref, mergeProps, useSSRContext } from "vue";
-import { ssrRenderAttrs, ssrRenderClass, ssrInterpolate, ssrRenderList, ssrRenderAttr, ssrRenderComponent } from "vue/server-renderer";
-import { useRouter } from "../node_modules/nuxt/dist/app/composables/router.mjs";
+import { ref, mergeProps, unref, useSSRContext } from "vue";
+import { ssrRenderAttrs, ssrRenderAttr, ssrRenderClass, ssrInterpolate, ssrRenderList, ssrRenderComponent } from "vue/server-renderer";
+import { goto } from "../utils/index.mjs";
 /* empty css                  */
 const _sfc_main = {
   __name: "ServiceCard",
   __ssrInlineRender: true,
   props: {
     title: {
+      type: String,
+      default: ""
+    },
+    subtitle: {
       type: String,
       default: ""
     },
@@ -35,15 +39,16 @@ const _sfc_main = {
     }
   },
   setup(__props) {
-    const props = __props;
-    const router = useRouter();
     ref("");
-    const goto = () => {
-      router.push(props.link.href);
-    };
     return (_ctx, _push, _parent, _attrs) => {
       const _component_ButtonComponent = _sfc_main$1;
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex flex-col items-center justify-center max-w-lg text-black bg-white border border-black sharp-shadow-lg" }, _attrs))}><span class="${ssrRenderClass([`text-${__props.color}`, "py-12 text-4xl font-semibold uppercase"])}">${ssrInterpolate(__props.title)}</span><div class="${ssrRenderClass([`bg-${__props.color}`, "flex flex-col items-center justify-center w-full gap-4 p-4 text-white"])}">`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex flex-col items-center justify-center max-w-lg text-black bg-white border border-black min-w-80 sharp-shadow-lg" }, _attrs))}><div class="flex flex-col items-center justify-center p-2 text-center lg:text-start lg:flex-row">`);
+      if (__props.img) {
+        _push(`<img${ssrRenderAttr("src", __props.img.url)}${ssrRenderAttr("alt", __props.img.alt)} class="h-40">`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`<div class="flex flex-col"><span class="${ssrRenderClass([`text-${__props.color}`, "text-2xl font-semibold uppercase"])}">${ssrInterpolate(__props.title)}</span><span class="${ssrRenderClass([`text-${__props.color}`, "text-lg"])}">${ssrInterpolate(__props.subtitle)}</span></div></div><div class="${ssrRenderClass([`bg-${__props.color}`, "flex flex-col items-center justify-center w-full gap-4 p-4 text-white"])}">`);
       if (__props.content) {
         _push(`<div class="flex flex-col gap-4 text-sm"><!--[-->`);
         ssrRenderList(__props.content, (item, i) => {
@@ -58,17 +63,12 @@ const _sfc_main = {
       } else {
         _push(`<!---->`);
       }
-      if (__props.img) {
-        _push(`<img${ssrRenderAttr("src", __props.img.url)}${ssrRenderAttr("alt", __props.img.alt)} width="300">`);
-      } else {
-        _push(`<!---->`);
-      }
       if (__props.link) {
         _push(ssrRenderComponent(_component_ButtonComponent, {
-          label: __props.link.label,
+          label: __props.link.text,
           color: { text: "black", bg: "white", shadow: "black" },
           class: "ml-2",
-          onClick: goto
+          onClick: ($event) => unref(goto)(__props.link.href)
         }, null, _parent));
       } else {
         _push(`<!---->`);
