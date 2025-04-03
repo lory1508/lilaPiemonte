@@ -1,32 +1,32 @@
 const client_manifest = {
-  "_BAGGRHw_.js": {
+  "_CEsc_vIz.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "BAGGRHw_.js",
+    "file": "CEsc_vIz.js",
     "name": "nuxt-link",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
-  "_C4bEyIOk.js": {
+  "_DSN_b3QB.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "C4bEyIOk.js",
+    "file": "DSN_b3QB.js",
     "name": "data",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
-  "_C7jVGIHB.js": {
+  "_DufIISV0.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "C7jVGIHB.js",
+    "file": "DufIISV0.js",
     "name": "v3",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
@@ -37,13 +37,13 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "DvKNAoZ5.js",
+    "file": "DZtJpASi.js",
     "name": "default",
     "src": "layouts/default.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_BAGGRHw_.js",
-      "_C4bEyIOk.js",
+      "_CEsc_vIz.js",
+      "_DSN_b3QB.js",
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
@@ -52,14 +52,14 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "CEuZo_JC.js",
+    "file": "gvgvL6da.js",
     "name": "error-404",
     "src": "node_modules/nuxt/dist/app/components/error-404.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_BAGGRHw_.js",
+      "_CEsc_vIz.js",
       "node_modules/nuxt/dist/app/entry.js",
-      "_C7jVGIHB.js"
+      "_DufIISV0.js"
     ],
     "css": []
   },
@@ -74,13 +74,13 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "Dkryn_z_.js",
+    "file": "BceykBHx.js",
     "name": "error-500",
     "src": "node_modules/nuxt/dist/app/components/error-500.vue",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt/dist/app/entry.js",
-      "_C7jVGIHB.js"
+      "_DufIISV0.js"
     ],
     "css": []
   },
@@ -95,7 +95,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "DQRK_mt6.js",
+    "file": "Cbd1I6BV.js",
     "name": "entry",
     "src": "node_modules/nuxt/dist/app/entry.js",
     "isEntry": true,
@@ -112,7 +112,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "tpTj-ch7.js",
+    "file": "DnA7GVlV.js",
     "name": "chi-siamo",
     "src": "pages/chi-siamo.vue",
     "isDynamicEntry": true,
@@ -125,7 +125,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "i8YWfULg.js",
+    "file": "C9ihCGZX.js",
     "name": "contattaci",
     "src": "pages/contattaci.vue",
     "isDynamicEntry": true,
@@ -138,7 +138,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "pZCSvB50.js",
+    "file": "LLh8nsV2.js",
     "name": "eventi",
     "src": "pages/eventi.vue",
     "isDynamicEntry": true,
@@ -151,13 +151,13 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "y2aWK6Rr.js",
+    "file": "BTloLfgA.js",
     "name": "index",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt/dist/app/entry.js",
-      "_C4bEyIOk.js"
+      "_DSN_b3QB.js"
     ],
     "css": [
       "index.Co_RJe4m.css"
@@ -174,7 +174,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "tE_Lb-rZ.js",
+    "file": "Bg82Sqq8.js",
     "name": "sostienici",
     "src": "pages/sostienici.vue",
     "isDynamicEntry": true,
@@ -187,7 +187,7 @@ const client_manifest = {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "CYqa4sUR.js",
+    "file": "DKItTvZc.js",
     "name": "volontariato",
     "src": "pages/volontariato.vue",
     "isDynamicEntry": true,

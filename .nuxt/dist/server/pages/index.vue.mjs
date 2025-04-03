@@ -36,7 +36,7 @@ const _sfc_main = {
           title: unref(hero).title,
           content: unref(hero).content
         }, null, _parent));
-        _push(`<div class="flex flex-col items-center justify-center gap-4 py-8 bg-paleRed"><h2 class="text-5xl font-bold text-center uppercase text-crimson">${ssrInterpolate(unref(nextEvent).title)}</h2>`);
+        _push(`<div class="flex flex-col items-center justify-center w-full gap-4 px-4 py-8 bg-paleRed"><h2 class="text-5xl font-bold text-center uppercase text-crimson">${ssrInterpolate(unref(nextEvent).title)}</h2>`);
         _push(ssrRenderComponent(_component_EventCard, {
           cover: unref(nextEvent).event.cover,
           title: unref(nextEvent).event.title,
@@ -80,7 +80,7 @@ const _sfc_main = {
             href: link.href,
             text: link.text,
             icon: link.icon,
-            color: link.color
+            type: link.type
           }, null, _parent));
         });
         _push(`<!--]--></div></div>`);

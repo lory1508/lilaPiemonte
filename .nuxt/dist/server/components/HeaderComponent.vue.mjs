@@ -69,10 +69,11 @@ const _sfc_main = {
         }
         _push(`</div>`);
       });
-      _push(`<!--]--></div></div><div class="fixed z-50 flex right-8 top-16 lg:hidden">`);
+      _push(`<!--]--></div></div><div class="fixed z-50 flex right-8 top-8 lg:hidden">`);
       _push(ssrRenderComponent(unref(Icon), {
-        icon: "solar:hamburger-menu-bold-duotone",
-        width: "64"
+        icon: "solar:hamburger-menu-line-duotone",
+        width: "64",
+        class: "text-black border-2 border-black backdrop-blur-sm sharp-shadow-sm shadow-black"
       }, null, _parent));
       _push(`</div><!--]-->`);
     };

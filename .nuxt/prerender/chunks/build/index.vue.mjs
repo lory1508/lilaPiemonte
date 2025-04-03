@@ -33,7 +33,7 @@ const _sfc_main$7 = {
   },
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(_attrs)}><div class="${ssrRenderClass([__props.backgroundColor, "flex flex-col items-start justify-center w-screen h-screen lg:px-12"])}" style="${ssrRenderStyle(`background-position: 125% 0%; background-repeat: no-repeat; background-size: 70%; background-image: url('${__props.backgroundImg}');`)}"><div class="flex flex-col items-center justify-center w-full h-full gap-16 px-4 text-white bg-black bg-opacity-50 lg:bg-opacity-0 lg:backdrop-blur-none backdrop-blur-md lg:w-1/3"><h1 class="text-6xl font-bold uppercase">${ssrInterpolate(__props.title)}</h1><div class="flex flex-col gap-4"><!--[-->`);
+      _push(`<div${ssrRenderAttrs(_attrs)}><div class="${ssrRenderClass([__props.backgroundColor, "flex flex-col items-start justify-center w-screen min-h-screen lg:px-12"])}" style="${ssrRenderStyle(`background-position: 125% 0%; background-repeat: no-repeat; background-size: 70%; background-image: url('${__props.backgroundImg}');`)}"><div class="flex flex-col items-center justify-center w-full h-screen gap-16 px-4 text-white bg-black bg-opacity-50 lg:bg-opacity-0 lg:backdrop-blur-none backdrop-blur-md lg:w-1/3"><h1 class="text-6xl font-bold uppercase">${ssrInterpolate(__props.title)}</h1><div class="flex flex-col gap-4"><!--[-->`);
       ssrRenderList(__props.content, (item, index) => {
         _push(`<div>${item ?? ""}</div>`);
       });
@@ -344,12 +344,17 @@ const _sfc_main$2 = {
       type: String,
       default: ""
     },
-    color: {
+    type: {
       type: String,
       default: ""
     }
   },
   setup(__props) {
+    const colorVariants = {
+      facebook: "text-[#1877f2]",
+      instagram: "text-[#ea4968]",
+      gmail: "text-[#c5221f]"
+    };
     return (_ctx, _push, _parent, _attrs) => {
       _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex items-center h-12 transition-all duration-300 bg-white rounded-full cursor-pointer hover:scale-105 w-fit" }, _attrs))}><div class="flex flex-row gap-4">`);
       _push(ssrRenderComponent(unref(Icon), {
@@ -357,7 +362,7 @@ const _sfc_main$2 = {
         width: "64",
         class: "rounded-full shadow-lg"
       }, null, _parent));
-      _push(`<div class="${ssrRenderClass(`flex items-center pr-4 text-md lg:text-2xl font-bold text-[${__props.color}] uppercase`)}">${ssrInterpolate(__props.text)}</div></div></div>`);
+      _push(`<div class="${ssrRenderClass(`flex items-center pr-4 text-md lg:text-2xl font-bold ${colorVariants[__props.type]} uppercase`)}">${ssrInterpolate(__props.text)}</div></div></div>`);
     };
   }
 };
@@ -433,7 +438,7 @@ const _sfc_main = {
           title: unref(hero).title,
           content: unref(hero).content
         }, null, _parent));
-        _push(`<div class="flex flex-col items-center justify-center gap-4 py-8 bg-paleRed"><h2 class="text-5xl font-bold text-center uppercase text-crimson">${ssrInterpolate(unref(nextEvent).title)}</h2>`);
+        _push(`<div class="flex flex-col items-center justify-center w-full gap-4 px-4 py-8 bg-paleRed"><h2 class="text-5xl font-bold text-center uppercase text-crimson">${ssrInterpolate(unref(nextEvent).title)}</h2>`);
         _push(ssrRenderComponent(_component_EventCard, {
           cover: unref(nextEvent).event.cover,
           title: unref(nextEvent).event.title,
@@ -477,7 +482,7 @@ const _sfc_main = {
             href: link.href,
             text: link.text,
             icon: link.icon,
-            color: link.color
+            type: link.type
           }, null, _parent));
         });
         _push(`<!--]--></div></div>`);
