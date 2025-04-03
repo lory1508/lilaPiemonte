@@ -1,8 +1,8 @@
 <template>
   <div
-    class="flex flex-col items-center justify-center max-w-lg text-black bg-white border border-black min-w-96 sharp-shadow-lg"
+    class="flex flex-col items-center justify-center max-w-lg text-black bg-white border border-black min-w-80 sharp-shadow-lg"
   >
-    <div class="flex flex-row items-center py-2">
+    <div class="flex flex-col items-center justify-center p-2 text-center lg:text-start lg:flex-row">
       <img v-if="img" :src="img.url" :alt="img.alt" class="h-40" />
       <div class="flex flex-col">
         <span class="text-2xl font-semibold uppercase" :class="`text-${color}`">{{ title }}</span>
@@ -21,13 +21,14 @@
         :label="link.text"
         :color="{ text: 'black', bg: 'white', shadow: 'black' }"
         class="ml-2"
-        @click="goto"
+        @click="goto(link.href)"
       />
     </div>
   </div>
 </template>
 
 <script setup>
+  import { goto } from '~/utils'
   const props = defineProps({
     title: {
       type: String,
@@ -69,20 +70,6 @@
       .replace(/[\s_-]+/g, '-') // replace space, underscore and hyphen characters with a single hyphen
       .replace(/^-+/, '') // trim leading hyphens
       .replace(/-+$/, '')
-  }
-
-  const goto = async () => {
-    console.log()
-    if (props.link.href.split('/')[0] === 'https:' || props.link.href.split('/')[0] === 'http:') {
-      await navigateTo(props.link.href, {
-        external: true,
-        open: {
-          target: '_blank',
-        },
-      })
-    } else {
-      await navigateTo(props.link.href)
-    }
   }
 
   onMounted(() => {

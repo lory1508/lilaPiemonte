@@ -19,6 +19,7 @@ interface _GlobalComponents {
     'HeaderComponent': typeof import("../components/HeaderComponent.vue")['default']
     'HeroComponent': typeof import("../components/HeroComponent.vue")['default']
     'ServiceCard': typeof import("../components/ServiceCard.vue")['default']
+    'SocialLink': typeof import("../components/SocialLink.vue")['default']
     'NuxtWelcome': typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
     'NuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
     'NuxtErrorBoundary': typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
@@ -49,6 +50,7 @@ interface _GlobalComponents {
     'LazyHeaderComponent': LazyComponent<typeof import("../components/HeaderComponent.vue")['default']>
     'LazyHeroComponent': LazyComponent<typeof import("../components/HeroComponent.vue")['default']>
     'LazyServiceCard': LazyComponent<typeof import("../components/ServiceCard.vue")['default']>
+    'LazySocialLink': LazyComponent<typeof import("../components/SocialLink.vue")['default']>
     'LazyNuxtWelcome': LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
     'LazyNuxtLayout': LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
     'LazyNuxtErrorBoundary': LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']>
@@ -85,6 +87,7 @@ export const FooterComponent: typeof import("../components/FooterComponent.vue")
 export const HeaderComponent: typeof import("../components/HeaderComponent.vue")['default']
 export const HeroComponent: typeof import("../components/HeroComponent.vue")['default']
 export const ServiceCard: typeof import("../components/ServiceCard.vue")['default']
+export const SocialLink: typeof import("../components/SocialLink.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
 export const NuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
 export const NuxtErrorBoundary: typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
@@ -115,6 +118,7 @@ export const LazyFooterComponent: LazyComponent<typeof import("../components/Foo
 export const LazyHeaderComponent: LazyComponent<typeof import("../components/HeaderComponent.vue")['default']>
 export const LazyHeroComponent: LazyComponent<typeof import("../components/HeroComponent.vue")['default']>
 export const LazyServiceCard: LazyComponent<typeof import("../components/ServiceCard.vue")['default']>
+export const LazySocialLink: LazyComponent<typeof import("../components/SocialLink.vue")['default']>
 export const LazyNuxtWelcome: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
 export const LazyNuxtLayout: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
 export const LazyNuxtErrorBoundary: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']>

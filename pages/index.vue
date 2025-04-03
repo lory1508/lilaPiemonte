@@ -60,6 +60,23 @@
           </div>
         </div>
       </div>
+
+      <!-- SOCIALS -->
+      <div class="flex flex-col items-center justify-center w-full gap-4 px-4 py-8 text-center border-y-4 bg-crimson">
+        <div class="text-4xl font-bold text-white uppercase">
+          {{ socials.title }}
+        </div>
+        <div class="flex flex-col items-center justify-center gap-8 lg:flex-row">
+          <SocialLink
+            v-for="(link, index) in socials.links"
+            :key="`socialLink_${index}`"
+            :href="link.href"
+            :text="link.text"
+            :icon="link.icon"
+            :color="link.color"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>

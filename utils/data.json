@@ -212,16 +212,24 @@
       "links": [
         {
           "type": "facebook",
-          "href": "https://www.facebook.com/lilapiemonte/"
+          "text": "facebook",
+          "href": "https://www.facebook.com/lilapiemonte/",
+          "icon": "logos:facebook",
+          "color": "#1877f2"
         },
         {
           "type": "instagram",
-          "href": "https://www.instagram.com/lilapiemonte/"
+          "text": "instagram",
+          "href": "https://www.instagram.com/lilapiemonte/",
+          "icon": "skill-icons:instagram",
+          "color": "#ea4968"
         },
         {
           "type": "gmail",
           "href": "mailto:infoaids@lilapiemonte.org",
-          "text": "infoaids@lilapiemonte.org"
+          "text": "infoaids@lilapiemonte.org",
+          "icon": "skill-icons:gmail-light",
+          "color": "#c5221f"
         }
       ]
     },

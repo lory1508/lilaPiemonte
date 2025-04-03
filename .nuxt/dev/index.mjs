@@ -1002,23 +1002,6 @@ async function errorHandler(error, event) {
   // H3 will handle fallback
 }
 
-const script = `
-if (!window.__NUXT_DEVTOOLS_TIME_METRIC__) {
-  Object.defineProperty(window, '__NUXT_DEVTOOLS_TIME_METRIC__', {
-    value: {},
-    enumerable: false,
-    configurable: true,
-  })
-}
-window.__NUXT_DEVTOOLS_TIME_METRIC__.appInit = Date.now()
-`;
-
-const _fkUC6JIT2zxvRo5KxbH2X417epSVNZAuSG5kKPwPSVY = (function(nitro) {
-  nitro.hooks.hook("render:html", (htmlContext) => {
-    htmlContext.head.push(`<script>${script}<\/script>`);
-  });
-});
-
 const rootDir = "/Users/lgalassi/workspace/lilaPiemonte";
 
 const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[]};
@@ -1108,8 +1091,7 @@ function onConsoleLog(callback) {
 }
 
 const plugins = [
-  _fkUC6JIT2zxvRo5KxbH2X417epSVNZAuSG5kKPwPSVY,
-_EFu8lmjA8tgq83ku3D5sAaWVI8hTTaLKlNcqWq0RqAU
+  _EFu8lmjA8tgq83ku3D5sAaWVI8hTTaLKlNcqWq0RqAU
 ];
 
 const _lazy_pxjTle = () => Promise.resolve().then(function () { return renderer$1; });

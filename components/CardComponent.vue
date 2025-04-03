@@ -16,13 +16,14 @@
         :label="link.label"
         :color="{ text: 'black', bg: 'white', shadow: 'black' }"
         class="ml-2"
-        @click="goto"
+        @click="goto(link.href)"
       />
     </div>
   </div>
 </template>
 
 <script setup>
+  import { goto } from '~/utils'
   const props = defineProps({
     title: {
       type: String,
@@ -50,7 +51,6 @@
     },
   })
 
-  const router = useRouter()
   const slug = ref('')
 
   const slugify = (str) => {
@@ -61,10 +61,6 @@
       .replace(/[\s_-]+/g, '-') // replace space, underscore and hyphen characters with a single hyphen
       .replace(/^-+/, '') // trim leading hyphens
       .replace(/-+$/, '')
-  }
-
-  const goto = () => {
-    router.push(props.link.href)
   }
 
   onMounted(() => {
