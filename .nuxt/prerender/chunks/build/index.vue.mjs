@@ -1,7 +1,8 @@
 import { ssrRenderAttrs, ssrRenderClass, ssrRenderStyle, ssrInterpolate, ssrRenderList, ssrRenderSlot, ssrRenderAttr, ssrRenderComponent } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/vue/server-renderer/index.mjs';
 import { useSSRContext, mergeProps, unref, ref } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/vue/index.mjs';
 import { Icon } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@iconify/vue/dist/iconify.mjs';
-import { n as navigateTo } from './server.mjs';
+import { g as goto } from './index.mjs';
+import './server.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/hookable/dist/index.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/unctx/dist/index.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/h3/dist/index.mjs';
@@ -9,6 +10,12 @@ import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/vue-router/di
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/radix3/dist/index.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/defu/dist/defu.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/ufo/dist/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/utils/eventbus/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styled/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/utils/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/utils/object/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/base/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/utils/dom/index.mjs';
 
 const _sfc_main$7 = {
   __name: "HeroComponent",
@@ -152,21 +159,6 @@ _sfc_main$5.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/EventCard.vue");
   return _sfc_setup$5 ? _sfc_setup$5(props, ctx) : void 0;
-};
-
-const goto = async (href) => {
-  console.log(href.split("/")[0]);
-  if (href.includes("http")) {
-    await navigateTo(href, {
-      external: true
-    });
-  } else if (href.includes("mailto")) {
-    await navigateTo(href, {
-      external: true
-    });
-  } else {
-    await navigateTo(href);
-  }
 };
 
 /* empty css                    */

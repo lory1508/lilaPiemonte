@@ -1,15 +1,20 @@
-import { _ as __nuxt_component_0 } from './nuxt-link.mjs';
-import { mergeProps, withCtx, createTextVNode, toDisplayString, useSSRContext } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/vue/index.mjs';
+import { defineComponent, ref, h, resolveComponent, computed, mergeProps, withCtx, createTextVNode, toDisplayString, useSSRContext } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/vue/index.mjs';
+import { parseQuery, hasProtocol, joinURL, withTrailingSlash, withoutTrailingSlash } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/ufo/dist/index.mjs';
+import { u as useRouter, a as useNuxtApp, r as resolveRouteObject, b as useRuntimeConfig, n as navigateTo, c as nuxtLinkDefaults, _ as _export_sfc } from './server.mjs';
 import { ssrRenderAttrs, ssrInterpolate, ssrRenderComponent } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/vue/server-renderer/index.mjs';
-import { _ as _export_sfc } from './server.mjs';
 import { u as useHead } from './v3.mjs';
-import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/ufo/dist/index.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/hookable/dist/index.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/unctx/dist/index.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/h3/dist/index.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/vue-router/dist/vue-router.node.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/radix3/dist/index.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/defu/dist/defu.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/utils/eventbus/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styled/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/utils/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/utils/object/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/base/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/utils/dom/index.mjs';
 import '../_/renderer.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/unhead/dist/server.mjs';
@@ -25,11 +30,376 @@ import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/unstorage/dri
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/ohash/dist/index.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/klona/dist/index.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/scule/dist/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primevue/core/base/style/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primevue/core/basecomponent/style/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/autocomplete/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/cascadeselect/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/checkbox/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/checkboxgroup/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/colorpicker/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/datepicker/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/floatlabel/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/iconfield/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/iftalabel/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/inputchips/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/inputgroup/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/inputnumber/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/inputotp/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/inputtext/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/knob/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/listbox/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/multiselect/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/password/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/radiobutton/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/radiobuttongroup/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/rating/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/select/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/selectbutton/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/slider/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/textarea/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/togglebutton/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/toggleswitch/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/treeselect/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/button/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/buttongroup/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/speeddial/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/splitbutton/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/datatable/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/dataview/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/orderlist/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/organizationchart/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/paginator/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/picklist/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/tree/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/treetable/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/timeline/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/virtualscroller/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/accordion/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/card/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/divider/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/fieldset/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/panel/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/scrollpanel/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/splitter/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/stepper/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/tabview/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/tabs/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/toolbar/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/confirmdialog/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/confirmpopup/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/dialog/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/drawer/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/popover/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/fileupload/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/breadcrumb/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/contextmenu/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/dock/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/menu/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/menubar/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/megamenu/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/panelmenu/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/steps/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/tabmenu/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/tieredmenu/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/message/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/inlinemessage/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/toast/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/carousel/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/galleria/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/image/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/imagecompare/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/avatar/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/badge/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/blockui/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/chip/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/inplace/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/metergroup/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/overlaybadge/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/scrolltop/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/skeleton/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/progressbar/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/progressspinner/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/tag/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/terminal/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primevue/forms/form/style/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primevue/forms/formfield/style/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/tooltip/index.mjs';
+import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/ripple/index.mjs';
 import 'node:fs';
 import 'node:url';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/pathe/dist/index.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/devalue/index.js';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/unhead/dist/plugins.mjs';
+
+const firstNonUndefined = (...args) => args.find((arg) => arg !== void 0);
+// @__NO_SIDE_EFFECTS__
+function defineNuxtLink(options) {
+  const componentName = options.componentName || "NuxtLink";
+  function isHashLinkWithoutHashMode(link) {
+    return typeof link === "string" && link.startsWith("#");
+  }
+  function resolveTrailingSlashBehavior(to, resolve) {
+    if (!to || options.trailingSlash !== "append" && options.trailingSlash !== "remove") {
+      return to;
+    }
+    if (typeof to === "string") {
+      return applyTrailingSlashBehavior(to, options.trailingSlash);
+    }
+    const path = "path" in to && to.path !== void 0 ? to.path : resolve(to).path;
+    const resolvedPath = {
+      ...to,
+      name: void 0,
+      // named routes would otherwise always override trailing slash behavior
+      path: applyTrailingSlashBehavior(path, options.trailingSlash)
+    };
+    return resolvedPath;
+  }
+  function useNuxtLink(props) {
+    const router = useRouter();
+    const config = useRuntimeConfig();
+    const hasTarget = computed(() => !!props.target && props.target !== "_self");
+    const isAbsoluteUrl = computed(() => {
+      const path = props.to || props.href || "";
+      return typeof path === "string" && hasProtocol(path, { acceptRelative: true });
+    });
+    const builtinRouterLink = resolveComponent("RouterLink");
+    const useBuiltinLink = builtinRouterLink && typeof builtinRouterLink !== "string" ? builtinRouterLink.useLink : void 0;
+    const isExternal = computed(() => {
+      if (props.external) {
+        return true;
+      }
+      const path = props.to || props.href || "";
+      if (typeof path === "object") {
+        return false;
+      }
+      return path === "" || isAbsoluteUrl.value;
+    });
+    const to = computed(() => {
+      const path = props.to || props.href || "";
+      if (isExternal.value) {
+        return path;
+      }
+      return resolveTrailingSlashBehavior(path, router.resolve);
+    });
+    const link = isExternal.value ? void 0 : useBuiltinLink == null ? void 0 : useBuiltinLink({ ...props, to });
+    const href = computed(() => {
+      var _a;
+      if (!to.value || isAbsoluteUrl.value || isHashLinkWithoutHashMode(to.value)) {
+        return to.value;
+      }
+      if (isExternal.value) {
+        const path = typeof to.value === "object" && "path" in to.value ? resolveRouteObject(to.value) : to.value;
+        const href2 = typeof path === "object" ? router.resolve(path).href : path;
+        return resolveTrailingSlashBehavior(
+          href2,
+          router.resolve
+          /* will not be called */
+        );
+      }
+      if (typeof to.value === "object") {
+        return ((_a = router.resolve(to.value)) == null ? void 0 : _a.href) ?? null;
+      }
+      return resolveTrailingSlashBehavior(
+        joinURL(config.app.baseURL, to.value),
+        router.resolve
+        /* will not be called */
+      );
+    });
+    return {
+      to,
+      hasTarget,
+      isAbsoluteUrl,
+      isExternal,
+      //
+      href,
+      isActive: (link == null ? void 0 : link.isActive) ?? computed(() => to.value === router.currentRoute.value.path),
+      isExactActive: (link == null ? void 0 : link.isExactActive) ?? computed(() => to.value === router.currentRoute.value.path),
+      route: (link == null ? void 0 : link.route) ?? computed(() => router.resolve(to.value)),
+      async navigate(_e) {
+        await navigateTo(href.value, { replace: props.replace, external: isExternal.value || hasTarget.value });
+      }
+    };
+  }
+  return defineComponent({
+    name: componentName,
+    props: {
+      // Routing
+      to: {
+        type: [String, Object],
+        default: void 0,
+        required: false
+      },
+      href: {
+        type: [String, Object],
+        default: void 0,
+        required: false
+      },
+      // Attributes
+      target: {
+        type: String,
+        default: void 0,
+        required: false
+      },
+      rel: {
+        type: String,
+        default: void 0,
+        required: false
+      },
+      noRel: {
+        type: Boolean,
+        default: void 0,
+        required: false
+      },
+      // Prefetching
+      prefetch: {
+        type: Boolean,
+        default: void 0,
+        required: false
+      },
+      prefetchOn: {
+        type: [String, Object],
+        default: void 0,
+        required: false
+      },
+      noPrefetch: {
+        type: Boolean,
+        default: void 0,
+        required: false
+      },
+      // Styling
+      activeClass: {
+        type: String,
+        default: void 0,
+        required: false
+      },
+      exactActiveClass: {
+        type: String,
+        default: void 0,
+        required: false
+      },
+      prefetchedClass: {
+        type: String,
+        default: void 0,
+        required: false
+      },
+      // Vue Router's `<RouterLink>` additional props
+      replace: {
+        type: Boolean,
+        default: void 0,
+        required: false
+      },
+      ariaCurrentValue: {
+        type: String,
+        default: void 0,
+        required: false
+      },
+      // Edge cases handling
+      external: {
+        type: Boolean,
+        default: void 0,
+        required: false
+      },
+      // Slot API
+      custom: {
+        type: Boolean,
+        default: void 0,
+        required: false
+      }
+    },
+    useLink: useNuxtLink,
+    setup(props, { slots }) {
+      useRouter();
+      const { to, href, navigate, isExternal, hasTarget, isAbsoluteUrl } = useNuxtLink(props);
+      ref(false);
+      const el = void 0;
+      const elRef = void 0;
+      async function prefetch(nuxtApp = useNuxtApp()) {
+        {
+          return;
+        }
+      }
+      return () => {
+        var _a;
+        if (!isExternal.value && !hasTarget.value && !isHashLinkWithoutHashMode(to.value)) {
+          const routerLinkProps = {
+            ref: elRef,
+            to: to.value,
+            activeClass: props.activeClass || options.activeClass,
+            exactActiveClass: props.exactActiveClass || options.exactActiveClass,
+            replace: props.replace,
+            ariaCurrentValue: props.ariaCurrentValue,
+            custom: props.custom
+          };
+          if (!props.custom) {
+            routerLinkProps.rel = props.rel || void 0;
+          }
+          return h(
+            resolveComponent("RouterLink"),
+            routerLinkProps,
+            slots.default
+          );
+        }
+        const target = props.target || null;
+        const rel = firstNonUndefined(
+          // converts `""` to `null` to prevent the attribute from being added as empty (`rel=""`)
+          props.noRel ? "" : props.rel,
+          options.externalRelAttribute,
+          /*
+          * A fallback rel of `noopener noreferrer` is applied for external links or links that open in a new tab.
+          * This solves a reverse tabnapping security flaw in browsers pre-2021 as well as improving privacy.
+          */
+          isAbsoluteUrl.value || hasTarget.value ? "noopener noreferrer" : ""
+        ) || null;
+        if (props.custom) {
+          if (!slots.default) {
+            return null;
+          }
+          return slots.default({
+            href: href.value,
+            navigate,
+            prefetch,
+            get route() {
+              if (!href.value) {
+                return void 0;
+              }
+              const url = new URL(href.value, "http://localhost");
+              return {
+                path: url.pathname,
+                fullPath: url.pathname,
+                get query() {
+                  return parseQuery(url.search);
+                },
+                hash: url.hash,
+                params: {},
+                name: void 0,
+                matched: [],
+                redirectedFrom: void 0,
+                meta: {},
+                href: href.value
+              };
+            },
+            rel,
+            target,
+            isExternal: isExternal.value || hasTarget.value,
+            isActive: false,
+            isExactActive: false
+          });
+        }
+        return h("a", { ref: el, href: href.value || null, rel, target }, (_a = slots.default) == null ? void 0 : _a.call(slots));
+      };
+    }
+    // }) as unknown as DefineComponent<NuxtLinkProps, object, object, ComputedOptions, MethodOptions, object, object, EmitsOptions, string, object, NuxtLinkProps, object, SlotsType<NuxtLinkSlots>>
+  });
+}
+const __nuxt_component_0 = /* @__PURE__ */ defineNuxtLink(nuxtLinkDefaults);
+function applyTrailingSlashBehavior(to, trailingSlash) {
+  const normalizeFn = trailingSlash === "append" ? withTrailingSlash : withoutTrailingSlash;
+  const hasProtocolDifferentFromHttp = hasProtocol(to) && !to.startsWith("http");
+  if (hasProtocolDifferentFromHttp) {
+    return to;
+  }
+  return normalizeFn(to, true);
+}
 
 const _sfc_main = {
   __name: "error-404",
