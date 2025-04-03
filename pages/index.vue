@@ -11,7 +11,7 @@
       />
 
       <!-- NEXT EVENT -->
-      <div class="flex flex-col items-center justify-center gap-4 py-8 bg-paleRed">
+      <div class="flex flex-col items-center justify-center w-full gap-4 px-4 py-8 bg-paleRed">
         <h2 class="text-5xl font-bold text-center uppercase text-crimson">{{ nextEvent.title }}</h2>
         <EventCard
           :cover="nextEvent.event.cover"
@@ -73,7 +73,7 @@
             :href="link.href"
             :text="link.text"
             :icon="link.icon"
-            :color="link.color"
+            :type="link.type"
           />
         </div>
       </div>

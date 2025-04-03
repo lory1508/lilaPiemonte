@@ -5,7 +5,7 @@
   >
     <div class="flex flex-row gap-4">
       <Icon :icon="icon" width="64" class="rounded-full shadow-lg" />
-      <div :class="`flex items-center pr-4 text-md lg:text-2xl font-bold text-[${color}] uppercase`">
+      <div :class="`flex items-center pr-4 text-md lg:text-2xl font-bold ${colorVariants[type]} uppercase`">
         {{ text }}
       </div>
     </div>
@@ -29,9 +29,15 @@
       type: String,
       default: '',
     },
-    color: {
+    type: {
       type: String,
       default: '',
     },
   })
+
+  const colorVariants = {
+    facebook: 'text-[#1877f2]',
+    instagram: 'text-[#ea4968]',
+    gmail: 'text-[#c5221f]',
+  }
 </script>
