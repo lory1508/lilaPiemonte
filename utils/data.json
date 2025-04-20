@@ -236,5 +236,56 @@
     "video": {
       "id": "DxjtsNNFdI0"
     }
+  },
+  "chiSiamo": {
+    "title": "Chi siamo",
+    "content": [
+      "La LILA, <strong>Lega Italiana per la Lotta contro l 'AIDS</strong>, è un 'associazione senza scopo di lucro, <strong>nata nel 1987</strong>, che agisce sull'intero territorio nazionale attraverso le sue sedi locali.",
+      "Essa è costituita da una federazione di associazioni e gruppi di volontariato composti da persone sieropositive e non, volontari e professionisti, ed è organizzata attraverso una sede nazionale, con aree di servizio, finalizzata alla ricerca sulle terapie, sui comportamenti, sull 'assistenza e sulla prevenzione. La sede nazionale opera per uno sviluppo delle politiche socio-sanitarie e per la crescita delle sedi che operano territorialmente a livello regionale, provinciale e cittadino.",
+      " La <strong>LILA Piemonte è presente dal 1990</strong>"
+    ],
+    "btnStatuto": {
+      "title": "Leggi il nostro statuto",
+      "href": "/docs/StatutoLILA_Piemonte.pdf"
+    },
+    "rendiconto": [
+      {
+        "year": 2023,
+        "nota": {
+          "title": "Nota del rendiconto economico",
+          "href": "/docs/2023/NOTA-AL-RENDICONTO-ECONOMICO.pdf"
+        },
+        "rendiconto": {
+          "title": "Rendiconto economico",
+          "href": "/docs/2023/Rendiconto.pdf"
+        }
+      },
+      {
+        "year": 2022,
+        "nota": {
+          "title": "Nota del rendiconto economico",
+          "href": "/docs/2022/NOTA-AL-RENDICONTO-ECONOMICO.pdf"
+        },
+        "rendiconto": {
+          "title": "Rendiconto economico",
+          "href": "/docs/2022/Rendiconto.pdf"
+        }
+      },
+      {
+        "year": 2021,
+        "nota": {
+          "title": "Nota del rendiconto economico",
+          "href": "/docs/2021/NOTA-AL-RENDICONTO-ECONOMICO.pdf"
+        },
+        "rendiconto": {
+          "title": "Rendiconto economico",
+          "href": "/docs/2021/Rendiconto.pdf"
+        }
+      }
+    ],
+    "imgFooter": {
+      "url": "/images/chi-siamo-footer.png",
+      "alt": "Chi siamo"
+    }
   }
 }

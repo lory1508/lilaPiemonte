@@ -1,4 +1,4 @@
-const goto = async (href) => {
+const goto = async (href, target = '_self') => {
   console.log(href.split('/')[0])
   if (href.includes('http')) {
     await navigateTo(href, {
@@ -10,9 +10,16 @@ const goto = async (href) => {
   } else if (href.includes('mailto')) {
     await navigateTo(href, {
       external: true,
+      open: {
+        target,
+      },
     })
   } else {
-    await navigateTo(href)
+    await navigateTo(href, {
+      open: {
+        target,
+      },
+    })
   }
 }
 

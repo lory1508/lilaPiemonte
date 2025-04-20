@@ -1,6 +1,6 @@
 <template>
   <div
-    class="px-2 py-1 transition-all duration-300 border cursor-pointer sharp-shadow-sm hover:scale-105 w-fit"
+    class="flex flex-row items-center gap-2 px-2 py-1 transition-all duration-300 border cursor-pointer sharp-shadow-sm hover:scale-105 w-fit"
     :class="`bg-${color.bg} text-${color.shadow} border-${color.shadow}`"
   >
     <slot name="left-slot" />
