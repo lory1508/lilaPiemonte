@@ -1,5 +1,5 @@
 import { navigateTo } from "../node_modules/nuxt/dist/app/composables/router.mjs";
-const goto = async (href) => {
+const goto = async (href, target = "_self") => {
   console.log(href.split("/")[0]);
   if (href.includes("http")) {
     await navigateTo(href, {
@@ -10,7 +10,7 @@ const goto = async (href) => {
       external: true
     });
   } else {
-    await navigateTo(href);
+    await navigateTo(href, {});
   }
 };
 export {

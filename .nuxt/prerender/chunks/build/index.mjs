@@ -1,6 +1,6 @@
 import { n as navigateTo } from './server.mjs';
 
-const goto = async (href) => {
+const goto = async (href, target = "_self") => {
   console.log(href.split("/")[0]);
   if (href.includes("http")) {
     await navigateTo(href, {
@@ -11,7 +11,7 @@ const goto = async (href) => {
       external: true
     });
   } else {
-    await navigateTo(href);
+    await navigateTo(href, {});
   }
 };
 

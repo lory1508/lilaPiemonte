@@ -22,7 +22,7 @@ const _sfc_main = {
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
       _push(`<div${ssrRenderAttrs(mergeProps({
-        class: ["px-2 py-1 transition-all duration-300 border cursor-pointer sharp-shadow-sm hover:scale-105 w-fit", `bg-${__props.color.bg} text-${__props.color.shadow} border-${__props.color.shadow}`]
+        class: ["flex flex-row items-center gap-2 px-2 py-1 transition-all duration-300 border cursor-pointer sharp-shadow-sm hover:scale-105 w-fit", `bg-${__props.color.bg} text-${__props.color.shadow} border-${__props.color.shadow}`]
       }, _attrs))}>`);
       ssrRenderSlot(_ctx.$slots, "left-slot", {}, null, _push, _parent);
       _push(`<div class="${ssrRenderClass(`text-${__props.color.text}`)}">${ssrInterpolate(__props.label)}</div>`);
