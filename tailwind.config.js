@@ -16,6 +16,7 @@ export default {
     'bg-lightRed',
     'bg-crimson',
     'bg-customRed',
+    'bg-brightCoral',
     'text-paleRed',
     'text-brickRed',
     'text-softWarmRed',
@@ -23,6 +24,7 @@ export default {
     'text-lightRed',
     'text-crimson',
     'text-customRed',
+    'text-brightCoral',
   ],
   theme: {
     extend: {
@@ -34,6 +36,7 @@ export default {
         lightRed: '#FF6F61',
         crimson: '#B71C1C',
         customRed: '#E53935',
+        brightCoral: '#FF7043',
       },
     },
   },

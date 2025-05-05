@@ -316,11 +316,18 @@
         ]
       },
       "paypal": {
-        "title": "PayPal"
+        "title": "PayPal",
+        "link": {
+          "label": "Fai una donazione con PayPal",
+          "href": "https://www.paypal.com/donate?token=ZyvP5exoRHET-rGalrcKY3yuLPSyTbWOiFnk8WKEUZx46j9mEijrSsouOZ3GG1-Ay8wOJoN6s-mSGwPA"
+        }
       },
       "bonifico": {
         "title": "Bonifico",
-        "content": ["Conto corrente bancario UNICREDIT BANCA", "IBAN IT 46 C 02008 01131 000001921349"]
+        "content": [
+          "Conto corrente bancario: <strong>UNICREDIT BANCA</strong>",
+          "IBAN: <strong>IT 46 C 02008 01131 000001921349</strong>"
+        ]
       }
     }
   },
