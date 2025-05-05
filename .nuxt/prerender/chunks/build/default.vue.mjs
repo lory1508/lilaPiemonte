@@ -1,10 +1,11 @@
 import { _ as __nuxt_component_0 } from './nuxt-link.mjs';
-import { ref, unref, withCtx, createTextVNode, toDisplayString, createVNode, isRef, createBlock, openBlock, Fragment, renderList, useSSRContext } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/vue/index.mjs';
+import { ref, computed, unref, withCtx, createTextVNode, toDisplayString, createVNode, isRef, createBlock, openBlock, Fragment, renderList, useSSRContext, mergeProps } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/vue/index.mjs';
 import { ssrRenderList, ssrRenderClass, ssrRenderComponent, ssrInterpolate, ssrRenderAttr, ssrRenderAttrs, ssrRenderSlot } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/vue/server-renderer/index.mjs';
 import { Icon } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@iconify/vue/dist/iconify.mjs';
 import { g as goto } from './index.mjs';
 import script from './index282.mjs';
-import { _ as _export_sfc } from './server.mjs';
+import { f as useRoute, _ as _export_sfc } from './server.mjs';
+import { d as data } from './data.json.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/ufo/dist/index.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/utils/index.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/utils/dom/index.mjs';
@@ -36,10 +37,11 @@ import './index7.mjs';
 import './index42.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@primeuix/styles/dialog/index.mjs';
 
-const _sfc_main$1 = {
+const _sfc_main$2 = {
   __name: "HeaderComponent",
   __ssrInlineRender: true,
   setup(__props) {
+    const route = useRoute();
     const leftLinks = ref([]);
     const rightLinks = ref([]);
     const logo = ref("");
@@ -48,11 +50,15 @@ const _sfc_main$1 = {
       await goto(href);
       visible.value = false;
     };
+    const activeLink = computed(() => {
+      const links = [...leftLinks.value, ...rightLinks.value];
+      return links.find((l) => l.href === route.path);
+    });
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLink = __nuxt_component_0;
       _push(`<!--[--><div class="fixed flex-row justify-between hidden w-full h-16 p-2 text-white bg-black lg:flex backdrop-blur-md bg-opacity-15"><div class="flex flex-row items-center gap-6 montserrat"><!--[-->`);
       ssrRenderList(unref(leftLinks), (ll, index) => {
-        _push(`<div class="${ssrRenderClass(ll.active ? "underline font-semibold" : "")}">`);
+        _push(`<div class="${ssrRenderClass(ll.href == unref(activeLink).href ? "underline font-semibold" : "")}">`);
         _push(ssrRenderComponent(_component_NuxtLink, {
           to: ll.href
         }, {
@@ -71,7 +77,7 @@ const _sfc_main$1 = {
       });
       _push(`<!--]--></div><img${ssrRenderAttr("src", unref(logo))} alt=""><div class="flex flex-row items-center gap-6 montserrat"><!--[-->`);
       ssrRenderList(unref(rightLinks), (rl, index) => {
-        _push(`<div class="${ssrRenderClass(rl.active ? "underline font-semibold" : "")}">`);
+        _push(`<div class="${ssrRenderClass(rl.href == unref(activeLink).href ? "underline font-semibold" : "")}">`);
         if (index == unref(rightLinks).length - 1) {
           _push(ssrRenderComponent(_component_NuxtLink, {
             to: rl.href,
@@ -185,19 +191,38 @@ const _sfc_main$1 = {
     };
   }
 };
+const _sfc_setup$2 = _sfc_main$2.setup;
+_sfc_main$2.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/HeaderComponent.vue");
+  return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
+};
+
+const _sfc_main$1 = {
+  __name: "FooterComponent",
+  __ssrInlineRender: true,
+  setup(__props) {
+    const footer = ref(data.footer);
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex flex-col items-center justify-center gap-4 py-12 uppercase lg:flex-row bg-crimson" }, _attrs))}><span>${ssrInterpolate(unref(footer).name)}</span><span>© ${ssrInterpolate((/* @__PURE__ */ new Date()).getFullYear())} ${ssrInterpolate(unref(footer).copyright)}</span><span>${unref(footer).referral ?? ""}</span></div>`);
+    };
+  }
+};
 const _sfc_setup$1 = _sfc_main$1.setup;
 _sfc_main$1.setup = (props, ctx) => {
   const ssrContext = useSSRContext();
-  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/HeaderComponent.vue");
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("components/FooterComponent.vue");
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
 
 const _sfc_main = {};
 function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
-  const _component_HeaderComponent = _sfc_main$1;
+  const _component_HeaderComponent = _sfc_main$2;
+  const _component_FooterComponent = _sfc_main$1;
   _push(`<div${ssrRenderAttrs(_attrs)}>`);
   _push(ssrRenderComponent(_component_HeaderComponent, null, null, _parent));
   ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
+  _push(ssrRenderComponent(_component_FooterComponent, null, null, _parent));
   _push(`</div>`);
 }
 const _sfc_setup = _sfc_main.setup;

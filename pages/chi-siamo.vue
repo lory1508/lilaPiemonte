@@ -49,6 +49,11 @@
   import { Icon } from '@iconify/vue'
   import data from '~/utils/data.json'
 
-  const loading = ref(false)
   const chiSiamo = ref(data.chiSiamo)
 </script>
+
+<style scoped>
+  * :deep(strong) {
+    @apply text-softWarmRed;
+  }
+</style>

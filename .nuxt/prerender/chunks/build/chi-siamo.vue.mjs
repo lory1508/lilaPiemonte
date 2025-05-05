@@ -1,9 +1,10 @@
 import { ref, mergeProps, unref, withCtx, createVNode, useSSRContext } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/vue/index.mjs';
 import { ssrRenderAttrs, ssrInterpolate, ssrRenderList, ssrRenderComponent, ssrRenderAttr } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/vue/server-renderer/index.mjs';
-import { d as data, _ as _sfc_main$1 } from './data.json.mjs';
+import { _ as _sfc_main$1 } from './ButtonComponent.vue.mjs';
 import { g as goto } from './index.mjs';
 import { Icon } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@iconify/vue/dist/iconify.mjs';
-import './server.mjs';
+import { d as data } from './data.json.mjs';
+import { _ as _export_sfc } from './server.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/hookable/dist/index.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/unctx/dist/index.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/h3/dist/index.mjs';
@@ -22,19 +23,18 @@ const _sfc_main = {
   __name: "chi-siamo",
   __ssrInlineRender: true,
   setup(__props) {
-    ref(false);
-    const chiSiamo = ref(data.chiSiamo);
+    const chiSiamo2 = ref(data.chiSiamo);
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex flex-col" }, _attrs))}><div class="flex justify-center pt-24 pb-8 bg-softWarmRed"><h2 class="text-5xl font-bold text-center text-white uppercase">${ssrInterpolate(unref(chiSiamo).title)}</h2></div><div class="flex flex-col gap-4 px-6 py-8 text-black bg-white"><!--[-->`);
-      ssrRenderList(unref(chiSiamo).content, (item, index) => {
-        _push(`<span>${item ?? ""}</span>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "flex flex-col" }, _attrs))} data-v-8945a68b><div class="flex justify-center pt-24 pb-8 bg-softWarmRed" data-v-8945a68b><h2 class="text-5xl font-bold text-center text-white uppercase" data-v-8945a68b>${ssrInterpolate(unref(chiSiamo2).title)}</h2></div><div class="flex flex-col gap-4 px-6 py-8 text-black bg-white" data-v-8945a68b><!--[-->`);
+      ssrRenderList(unref(chiSiamo2).content, (item, index) => {
+        _push(`<span data-v-8945a68b>${item ?? ""}</span>`);
       });
-      _push(`<!--]--><div class="flex flex-col items-center gap-6">`);
+      _push(`<!--]--><div class="flex flex-col items-center gap-6" data-v-8945a68b>`);
       _push(ssrRenderComponent(_sfc_main$1, {
-        label: unref(chiSiamo).btnStatuto.title,
+        label: unref(chiSiamo2).btnStatuto.title,
         color: { text: "softWarmRed", bg: "white", shadow: "softWarmRed" },
         class: "!p-4 text-xl",
-        onClick: ($event) => unref(goto)(unref(chiSiamo).btnStatuto.href, "_blank")
+        onClick: ($event) => unref(goto)(unref(chiSiamo2).btnStatuto.href, "_blank")
       }, {
         "left-slot": withCtx((_, _push2, _parent2, _scopeId) => {
           if (_push2) {
@@ -53,9 +53,9 @@ const _sfc_main = {
         }),
         _: 1
       }, _parent));
-      _push(`<div class="flex flex-col gap-12 lg:flex-row"><!--[-->`);
-      ssrRenderList(unref(chiSiamo).rendiconto, (item) => {
-        _push(`<div class="flex flex-row border-2 border-softWarmRed"><div class="flex items-center p-4 text-4xl font-bold text-softWarmRed">${ssrInterpolate(item.year)}</div><div class="flex flex-col gap-4 p-4 bg-softWarmRed">`);
+      _push(`<div class="flex flex-col gap-12 lg:flex-row" data-v-8945a68b><!--[-->`);
+      ssrRenderList(unref(chiSiamo2).rendiconto, (item) => {
+        _push(`<div class="flex flex-row border-2 border-softWarmRed" data-v-8945a68b><div class="flex items-center p-4 text-4xl font-bold text-softWarmRed" data-v-8945a68b>${ssrInterpolate(item.year)}</div><div class="flex flex-col gap-4 p-4 bg-softWarmRed" data-v-8945a68b>`);
         _push(ssrRenderComponent(_sfc_main$1, {
           label: item.nota.title,
           color: { text: "softWarmRed", bg: "white", shadow: "black" },
@@ -70,7 +70,7 @@ const _sfc_main = {
         }, null, _parent));
         _push(`</div></div>`);
       });
-      _push(`<!--]--></div></div></div><img${ssrRenderAttr("src", unref(chiSiamo).imgFooter.url)}${ssrRenderAttr("alt", unref(chiSiamo).imgFooter.alt)}></div>`);
+      _push(`<!--]--></div></div></div><img${ssrRenderAttr("src", unref(chiSiamo2).imgFooter.url)}${ssrRenderAttr("alt", unref(chiSiamo2).imgFooter.alt)} data-v-8945a68b></div>`);
     };
   }
 };
@@ -80,6 +80,7 @@ _sfc_main.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/chi-siamo.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
+const chiSiamo = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-8945a68b"]]);
 
-export { _sfc_main as default };
+export { chiSiamo as default };
 //# sourceMappingURL=chi-siamo.vue.mjs.map

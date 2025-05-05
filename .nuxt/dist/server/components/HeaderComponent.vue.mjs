@@ -1,13 +1,15 @@
 import __nuxt_component_0 from "../node_modules/nuxt/dist/app/components/nuxt-link.mjs";
-import { ref, unref, withCtx, createTextVNode, toDisplayString, createVNode, isRef, createBlock, openBlock, Fragment, renderList, useSSRContext } from "vue";
+import { ref, computed, unref, withCtx, createTextVNode, toDisplayString, createVNode, isRef, createBlock, openBlock, Fragment, renderList, useSSRContext } from "vue";
 import { ssrRenderList, ssrRenderClass, ssrRenderComponent, ssrInterpolate, ssrRenderAttr } from "vue/server-renderer";
 import { Icon } from "@iconify/vue";
 import { goto } from "../utils/index.mjs";
 import script from "../node_modules/primevue/dialog/index2.mjs";
+import { useRoute } from "../node_modules/nuxt/dist/app/composables/router.mjs";
 const _sfc_main = {
   __name: "HeaderComponent",
   __ssrInlineRender: true,
   setup(__props) {
+    const route = useRoute();
     const leftLinks = ref([]);
     const rightLinks = ref([]);
     const logo = ref("");
@@ -16,11 +18,15 @@ const _sfc_main = {
       await goto(href);
       visible.value = false;
     };
+    const activeLink = computed(() => {
+      const links = [...leftLinks.value, ...rightLinks.value];
+      return links.find((l) => l.href === route.path);
+    });
     return (_ctx, _push, _parent, _attrs) => {
       const _component_NuxtLink = __nuxt_component_0;
       _push(`<!--[--><div class="fixed flex-row justify-between hidden w-full h-16 p-2 text-white bg-black lg:flex backdrop-blur-md bg-opacity-15"><div class="flex flex-row items-center gap-6 montserrat"><!--[-->`);
       ssrRenderList(unref(leftLinks), (ll, index) => {
-        _push(`<div class="${ssrRenderClass(ll.active ? "underline font-semibold" : "")}">`);
+        _push(`<div class="${ssrRenderClass(ll.href == unref(activeLink).href ? "underline font-semibold" : "")}">`);
         _push(ssrRenderComponent(_component_NuxtLink, {
           to: ll.href
         }, {
@@ -39,7 +45,7 @@ const _sfc_main = {
       });
       _push(`<!--]--></div><img${ssrRenderAttr("src", unref(logo))} alt=""><div class="flex flex-row items-center gap-6 montserrat"><!--[-->`);
       ssrRenderList(unref(rightLinks), (rl, index) => {
-        _push(`<div class="${ssrRenderClass(rl.active ? "underline font-semibold" : "")}">`);
+        _push(`<div class="${ssrRenderClass(rl.href == unref(activeLink).href ? "underline font-semibold" : "")}">`);
         if (index == unref(rightLinks).length - 1) {
           _push(ssrRenderComponent(_component_NuxtLink, {
             to: rl.href,

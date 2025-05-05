@@ -1,6 +1,7 @@
 {
   "generalSettings": {
-    "logo": "/LogoLilaPiemonte_bianco_BG-trasparente.png"
+    "logo": "/LogoLilaPiemonte_bianco_BG-trasparente.png",
+    "codiceFiscale": "97536790013"
   },
   "menu": {
     "linksLeft": [
@@ -11,12 +12,12 @@
       },
       {
         "title": "Contattaci",
-        "href": "contattaci",
+        "href": "/contattaci",
         "active": false
       },
       {
         "title": "Chi siamo",
-        "href": "chi-siamo",
+        "href": "/chi-siamo",
         "active": false
       },
       {
@@ -27,25 +28,25 @@
     "linksRight": [
       {
         "title": "Eventi",
-        "href": "eventi",
+        "href": "/eventi",
         "active": false
       },
       {
         "title": "Volontariato",
-        "href": "volontariato",
+        "href": "/volontariato",
         "active": false
       },
       {
         "title": "Sostienici",
-        "href": "sostienici",
+        "href": "/sostienici",
         "active": false
       }
     ]
   },
   "footer": {
     "name": "LILA Piemonte",
-    "copyright": "© 2025 LILA Piemonte. Tutti i diritti riservati.",
-    "referral": "Sito web realizzato da Lorenzo Galassi"
+    "copyright": "LILA Piemonte. Tutti i diritti riservati.",
+    "referral": "Sito web realizzato da <strong>Lorenzo Galassi</strong>"
   },
   "home": {
     "hero": {
@@ -286,6 +287,67 @@
     "imgFooter": {
       "url": "/images/chi-siamo-footer.png",
       "alt": "Chi siamo"
+    }
+  },
+  "sostienici": {
+    "title": "Sostienici",
+    "contentUp": [
+      "La <strong>Lila Piemonte</strong> non accetta contributi dalle aziende farmaceutiche, al fine di mantenere alta la propria indipendenza ideologica: ecco perché chiediamo il tuo aiuto.",
+      "Il tuo sostegno attraverso il  Volontariato, Donazioni in denaro, con il 5 per mille  oppure virtualmente seguendoci su Facebook e condividendo i nostri post e le nostre campagne, tutto questo ci aiuterà a continuare le nostre attività e creare nuovi progetti"
+    ],
+    "contentDown": [
+      "Le donazioni a favore della Lila Piemonte sono detraibili  ai sensi dell'art.13 del D.L. 4/12/97 n° 460.Conserva la ricevuta, postale o bancaria, per detrarla con la prossima dichiarazione dei redditi. Le offerte tramite bonifico o carta di credito sono dimostrabili attraverso l'estratto conto che ha valore di ricevuta.",
+      "La legge 14 maggio 2005 n. 80 regola nuove agevolazioni fiscali: è possibile dedurre integralmente le donazioni nel limite del 10% del reddito complessivo dichiarato e nella misura massima di 70.000 euro annui."
+    ],
+    "cards": {
+      "satispay": {
+        "title": "Satispay",
+        "img": {
+          "url": "/images/satispay.png",
+          "alt": "Satispay"
+        }
+      },
+      "5x1000": {
+        "title": "5x1000",
+        "content": [
+          "Sostieni la LILA Piemonte ODV attraverso il 5×1000",
+          "Chiediamo il tuo contributo per continuare a svolgere le nostre attività di informazione e prevenzione, promuovere il diritto alla salute, sviluppare campagne di sensibilizzazione, tutelare i diritti di persone con HIV o malate di AIDS e offrire un servizio di counseling telefonico, per fare tutto questo abbiamo bisogno di TE",
+          "Per donarci il 5×1000 scrivi il codice fiscale"
+        ]
+      },
+      "paypal": {
+        "title": "PayPal"
+      },
+      "bonifico": {
+        "title": "Bonifico",
+        "content": ["Conto corrente bancario UNICREDIT BANCA", "IBAN IT 46 C 02008 01131 000001921349"]
+      }
+    }
+  },
+  "volontariato": {
+    "title": "Volontariato",
+    "content": [
+      "Se ti interessa avere più informazioni sull'HIV, informare gli altri su come si trasmette e come non si trasmette, aiutarci a rompere lo stigma che c'è ancora sulle persone sieropositive <strong>diventa unə volontariə.</strong>",
+
+      "Alla Lila Piemonte abbiamo un <strong>ambiente completamente privo di pregiudizi</strong>, non importa a quale minoranza tu appartenga troverai sempre un ambiente inclusivo.",
+
+      "Per i nuovi volontari organizziamo dei <strong>corsi di formazione completamente gratuiti</strong> e potrai ovviamente anche fare qualsiasi domanda ai volontari più esperti.",
+
+      "Potrai condividere le tue risorse e competenze per <strong>creare nuovi progetti</strong> e anche approfondire le tue competenze grazie ai corsi riservati ai volontari delle associazioni di volontariato, potrai svolgere attività di centralino, andare nelle scuole a fare incontri di formazione con gli studenti o andare nei locali a distribuire materiale informativo, <strong>il tutto in un clima di condivisone e partecipazione.</strong>",
+
+      "Se ti sei incuriosito scrivici un email a <strong><a href='mailto:lilapiemonte@gmail.com'>lilapiemonte@gmail.com</a></strong> lasciandoci un tuo recapito e ti ricontatteremo prestissimo.",
+
+      "<strong>Ti aspettiamo al prossimo incontro</strong>"
+    ],
+    "img": {
+      "url": "/images/volontariato.png",
+      "alt": "Volontariato"
+    },
+    "footer": {
+      "img": {
+        "url": "/images/volontariato-footer.png",
+        "alt": "Volontariato footer"
+      }
     }
   }
 }

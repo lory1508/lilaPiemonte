@@ -4,13 +4,21 @@
     class="fixed flex-row justify-between hidden w-full h-16 p-2 text-white bg-black lg:flex backdrop-blur-md bg-opacity-15"
   >
     <div class="flex flex-row items-center gap-6 montserrat">
-      <div v-for="(ll, index) in leftLinks" :key="`ll_${index}`" :class="ll.active ? 'underline font-semibold' : ''">
+      <div
+        v-for="(ll, index) in leftLinks"
+        :key="`ll_${index}`"
+        :class="ll.href == activeLink.href ? 'underline font-semibold' : ''"
+      >
         <NuxtLink :to="ll.href">{{ ll.title }}</NuxtLink>
       </div>
     </div>
     <img :src="logo" alt="" />
     <div class="flex flex-row items-center gap-6 montserrat">
-      <div v-for="(rl, index) in rightLinks" :key="`rl_${index}`" :class="rl.active ? 'underline font-semibold' : ''">
+      <div
+        v-for="(rl, index) in rightLinks"
+        :key="`rl_${index}`"
+        :class="rl.href == activeLink.href ? 'underline font-semibold' : ''"
+      >
         <NuxtLink
           v-if="index == rightLinks.length - 1"
           :to="rl.href"
@@ -74,6 +82,8 @@
   import data from '~/utils/data.json'
   import Dialog from 'primevue/dialog'
 
+  const route = useRoute()
+
   const leftLinks = ref([])
   const rightLinks = ref([])
   const logo = ref('')
@@ -83,6 +93,11 @@
     await goto(href)
     visible.value = false
   }
+
+  const activeLink = computed(() => {
+    const links = [...leftLinks.value, ...rightLinks.value]
+    return links.find((l) => l.href === route.path)
+  })
 
   onMounted(() => {
     leftLinks.value = data.menu.linksLeft

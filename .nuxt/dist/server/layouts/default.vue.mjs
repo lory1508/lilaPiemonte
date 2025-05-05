@@ -1,13 +1,16 @@
 import _sfc_main$1 from "../components/HeaderComponent.vue.mjs";
+import _sfc_main$2 from "../components/FooterComponent.vue.mjs";
 import { useSSRContext } from "vue";
 import { ssrRenderAttrs, ssrRenderComponent, ssrRenderSlot } from "vue/server-renderer";
 import _export_sfc from "../_virtual/_plugin-vue_export-helper.mjs";
 const _sfc_main = {};
 function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
   const _component_HeaderComponent = _sfc_main$1;
+  const _component_FooterComponent = _sfc_main$2;
   _push(`<div${ssrRenderAttrs(_attrs)}>`);
   _push(ssrRenderComponent(_component_HeaderComponent, null, null, _parent));
   ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
+  _push(ssrRenderComponent(_component_FooterComponent, null, null, _parent));
   _push(`</div>`);
 }
 const _sfc_setup = _sfc_main.setup;

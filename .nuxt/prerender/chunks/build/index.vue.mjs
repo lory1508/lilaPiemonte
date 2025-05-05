@@ -1,8 +1,9 @@
 import { ssrRenderAttrs, ssrRenderClass, ssrRenderStyle, ssrInterpolate, ssrRenderList, ssrRenderAttr, ssrRenderComponent } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/vue/server-renderer/index.mjs';
 import { useSSRContext, mergeProps, unref, ref } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/vue/index.mjs';
-import { _ as _sfc_main$7, d as data } from './data.json.mjs';
+import { _ as _sfc_main$7 } from './ButtonComponent.vue.mjs';
 import { Icon } from 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/@iconify/vue/dist/iconify.mjs';
 import { g as goto } from './index.mjs';
+import { d as data } from './data.json.mjs';
 import './server.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/hookable/dist/index.mjs';
 import 'file:///Users/lgalassi/workspace/lilaPiemonte/node_modules/unctx/dist/index.mjs';
