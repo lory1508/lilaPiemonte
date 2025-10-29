@@ -3,7 +3,7 @@
     <div
       class="flex flex-col items-start justify-center w-screen min-h-screen lg:px-12"
       :class="backgroundColor"
-      :style="`background-position: 125% 0%; background-repeat: no-repeat; background-size: 70%; background-image: url('${backgroundImg}');`"
+      :style="`background-position: 80% 0%; background-repeat: no-repeat; background-size: 50%; background-image: url('${backgroundImg}');`"
     >
       <div
         class="flex flex-col items-center justify-center w-full h-screen gap-16 px-4 text-white bg-black bg-opacity-50 lg:bg-opacity-0 lg:backdrop-blur-none backdrop-blur-md lg:w-1/3"
