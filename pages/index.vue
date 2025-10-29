@@ -28,7 +28,7 @@
       <div
         class="grid items-center justify-center w-full grid-cols-1 gap-4 px-4 py-8 border-black border-dashed lg:grid-cols-3 border-y-4 bg-lightRed"
       >
-        <div v-for="(card, index) in cards" :key="`card_${index}`">
+        <div v-for="(card, index) in cards" :key="`card_${index}`" class="h-full" >
           <CardComponent
             :title="card?.title"
             :content="card?.content"
@@ -41,12 +41,12 @@
       </div>
 
       <!-- SERVICES -->
-      <div class="flex flex-col items-center justify-center gap-4 py-8 bg-white">
+      <div class="flex flex-col items-center justify-center gap-4 py-8 bg-red-50">
         <div class="flex flex-col gap-2">
-          <h2 class="text-5xl font-bold text-center uppercase text-customRed">{{ services.title }}</h2>
-          <div class="flex items-center justify-center text-customRed">{{ services.subtitle }}</div>
-          <div class="flex flex-wrap items-start justify-center gap-8 px-8 py-4">
-            <div v-for="(service, index) in services.cards" :key="`service_${index}`">
+          <h2 class="text-5xl font-bold text-center uppercase text-deepMaroon">{{ services.title }}</h2>
+          <div class="flex items-center justify-center text-deepMaroon">{{ services.subtitle }}</div>
+          <div class="grid items-start justify-center grid-cols-1 gap-8 px-8 py-4 lg:grid-cols-3">
+            <div v-for="(service, index) in services.cards" :key="`service_${index}`" class="h-full">
               <ServiceCard
                 :title="service?.title"
                 :subtitle="service?.subtitle"

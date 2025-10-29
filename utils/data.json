@@ -75,7 +75,7 @@
     },
     "cards": [
       {
-        "color": "softWarmRed",
+        "color": "deepMaroon",
         "title": "Dona il 5x1000",
         "content": [
           "<strong>Sostieni la LILA Piemonte ODV attraverso il 5x1000</strong>",
@@ -101,7 +101,7 @@
         }
       },
       {
-        "color": "softWarmRed",
+        "color": "deepMaroon",
         "title": "Satispay",
         "img": {
           "url": "/images/satispay.png",
@@ -125,7 +125,7 @@
             "I contenuti e le modalità del nostro intervento vengono concordati con gli insegnanti e vertono sul tema della sessualità e dei comportamenti sicuri coinvolgendo gli studenti in un confronto attivo.",
             "Il progetto è condotto dai volontari LILA."
           ],
-          "color": "softWarmRed"
+          "color": "deepMaroon"
         },
         {
           "img": {
@@ -139,7 +139,7 @@
             "LILA Piemonte, fin dalla nascita, ha attivo un centralino telefonico fin dalla nascita dell'Associazione che gestisce le richieste di informazione sull'AIDS, difesa dei diritti, orientamento ai Servizi e di sostegno psicologico attraverso una formazione continua degli operatori.",
             "Hai dei dubbi o delle domande sull'HIV ma non vuoi o non puoi parlarne al telefono? Puoi contattare i nostri volontari anche tramite mail scrivendo a infoaids@lilapiemonte.org"
           ],
-          "color": "softWarmRed"
+          "color": "deepMaroon"
         },
         {
           "img": {
@@ -153,7 +153,7 @@
             "Persistono atteggiamenti di discriminazione e rifiuto dettati dalla paura e dalla scarsa conoscenza della realtà.",
             "LILA Piemonte , consapevole di quanto l'attivismo delle persone con HIV/AIDS sia una componente indispensabile del la lotta contro l'AIDS ed allo stigma che lo accompagna da sempre, offre la possibilità di impegnarsi in prima persona per la difesa dei propri diritti."
           ],
-          "color": "softWarmRed"
+          "color": "deepMaroon"
         },
         {
           "img": {
@@ -170,7 +170,7 @@
             "text": "Scopri gli orari",
             "href": "https://www.lila.it/it/sportello-virtuale"
           },
-          "color": "softWarmRed"
+          "color": "deepMaroon"
         },
         {
           "img": {
@@ -187,7 +187,7 @@
             "text": "Controlla i prossimi eventi",
             "href": "/eventi/test-rapidi"
           },
-          "color": "softWarmRed"
+          "color": "deepMaroon"
         },
         {
           "img": {
@@ -204,7 +204,7 @@
             "text": "Scopri gli orari",
             "href": "https://www.lila.it/it/helplilne"
           },
-          "color": "softWarmRed"
+          "color": "deepMaroon"
         }
       ]
     },
