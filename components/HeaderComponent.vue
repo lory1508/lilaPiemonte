@@ -12,7 +12,7 @@
         <NuxtLink :to="ll.href">{{ ll.title }}</NuxtLink>
       </div>
     </div>
-    <img :src="logo" alt="" />
+    <img :src="logo" class="cursor-pointer"  @click="goToLink('/')" />
     <div class="flex flex-row items-center gap-6 montserrat">
       <div
         v-for="(rl, index) in rightLinks"
