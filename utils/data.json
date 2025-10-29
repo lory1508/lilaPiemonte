@@ -76,6 +76,17 @@
     "cards": [
       {
         "color": "deepMaroon",
+        "title": "PayPal",
+        "content": [
+"Ogni contributo è un gesto concreto che ci permette di portare avanti le nostre attività. Con una donazione su PayPal puoi aiutarci a garantire ascolto, accoglienza e sostegno, e a diffondere una cultura di rispetto e solidarietà. Anche una piccola cifra può fare la differenza: ci aiuterai a mantenere vivi i servizi, i progetti e le attività che ogni giorno portiamo avanti con impegno e passione. Dona ora con PayPal e sostieni LILA Piemonte."
+        ],
+        "link": {
+          "label": "Fai una donazione con PayPal",
+          "href": "https://www.paypal.com/donate?token=gb058-Kp2Ytxf9MgFpSkf4O32f3qJVpyfOIQxHXVPOsU3AhgTgnP37f0AB11wLEWiw9AnkZSWcCuEZET"
+        }
+      },
+      {
+        "color": "deepMaroon",
         "title": "Dona il 5x1000",
         "content": [
           "<strong>Sostieni la LILA Piemonte ODV attraverso il 5x1000</strong>",
@@ -319,7 +330,7 @@
         "title": "PayPal",
         "link": {
           "label": "Fai una donazione con PayPal",
-          "href": "https://www.paypal.com/donate?token=ZyvP5exoRHET-rGalrcKY3yuLPSyTbWOiFnk8WKEUZx46j9mEijrSsouOZ3GG1-Ay8wOJoN6s-mSGwPA"
+          "href": "https://www.paypal.com/donate?token=gb058-Kp2Ytxf9MgFpSkf4O32f3qJVpyfOIQxHXVPOsU3AhgTgnP37f0AB11wLEWiw9AnkZSWcCuEZET"
         }
       },
       "bonifico": {

@@ -26,7 +26,7 @@
 
       <!-- CARDS -->
       <div
-        class="grid items-center justify-center w-full grid-cols-1 gap-4 px-4 py-8 border-black border-dashed lg:grid-cols-3 border-y-4 bg-lightRed"
+        class="grid items-center justify-center w-full grid-cols-1 gap-4 px-4 py-8 border-black border-dashed lg:grid-cols-4 border-y-4 bg-lightRed"
       >
         <div v-for="(card, index) in cards" :key="`card_${index}`" class="h-full" >
           <CardComponent
