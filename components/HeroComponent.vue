@@ -10,7 +10,8 @@
       >
         <h1 class="text-6xl font-bold uppercase">{{ title }}</h1>
         <div class="flex flex-col gap-4">
-          <div v-for="(item, index) in content" :key="`hero_content_${index}`" v-html="item" />
+          <div v-for="(item, index) in content" :key="`hero_content_${index}`" v-html="item.children[0].text" />
+          <!-- <pre>{{ content }}</pre> -->
         </div>
       </div>
     </div>
