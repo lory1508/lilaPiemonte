@@ -33,7 +33,7 @@
   </div>
 
   <!-- Mobile -->
-  <div class="fixed z-50 flex right-8 top-8 lg:hidden">
+  <div class="fixed z-50 flex right-4 top-4 lg:hidden">
     <div class="flex justify-center card">
       <Icon
         icon="solar:hamburger-menu-line-duotone"
