@@ -111,6 +111,7 @@
 
 <script setup>
   import data from "~/utils/data.json";
+  import { callBE } from "#imports";
 
   const loading = ref(false);
   const hero = ref("");
@@ -123,24 +124,15 @@
   onMounted(async () => {
     try {
       loading.value = true;
-      const config = useRuntimeConfig();
-      const token = config.public.strapi.token;
+      const params = {
+        "populate[heroSection][populate]": "*",
+        "populate[cards][populate]": "*",
+        "populate[nextEvent][populate][event][populate]": "*",
+        "populate[services][populate][services][populate]": "*",
+      }
 
-      const resStrapi = await $fetch(
-        `${config.public.strapi.url}/api/homepage`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          params: {
-            "populate[heroSection][populate]": "*",
-            "populate[cards][populate]": "*",
-            "populate[nextEvent][populate][event][populate]": "*",
-            "populate[services][populate][services][populate]": "*",
-          },
-        }
-      );
-
+      const resStrapi = await callBE("homepage", params)
+      
       hero.value = {
         title: resStrapi.data.heroSection.title,
         content: resStrapi.data.heroSection.content,
