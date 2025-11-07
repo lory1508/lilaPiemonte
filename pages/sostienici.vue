@@ -10,16 +10,16 @@
       <div class="w-full lg:w-[950px] mx-auto flex justify-center my-4">
         <div class="grid items-stretch justify-center grid-cols-1 gap-12 lg:grid-cols-2">
           <div class="flex flex-col items-center justify-center border border-black sharp-shadow-md w-80 lg:w-[460px]">
-            <div class="px-6 py-8 text-4xl font-bold uppercase text-softWarmRed">{{ satispay.title }}</div>
-            <div class="items-center justify-center w-full h-full px-6 py-2 mx-auto bg-softWarmRed">
+            <div class="px-6 py-8 text-4xl font-bold uppercase text-crimson">{{ satispay.title }}</div>
+            <div class="items-center justify-center w-full h-full px-6 py-2 mx-auto bg-crimson">
               <img :src="satispay.img.url" :alt="satispay.img.alt" width="300" class="w-full" />
             </div>
           </div>
 
           <!-- CINQUE PER MILLE -->
           <div class="flex flex-col items-center justify-center border border-black lg:w-[460px] w-80 sharp-shadow-md">
-            <div class="px-6 py-8 text-4xl font-bold text-brightCoral">{{ cinquePerMille.title }}</div>
-            <div class="flex flex-col w-full h-full gap-4 px-6 py-2 mx-auto bg-brightCoral">
+            <div class="px-6 py-8 text-4xl font-bold text-crimson">{{ cinquePerMille.title }}</div>
+            <div class="flex flex-col w-full h-full gap-4 px-6 py-2 mx-auto bg-crimson">
               <div v-for="(item, index) in cinquePerMille.content" :key="`content_${index}`">
                 <div v-html="item" class="text-sm text-white" />
               </div>
@@ -29,8 +29,8 @@
 
           <!-- PAYPAL -->
           <div class="flex flex-col items-center justify-center border border-black lg:w-[460px] w-80 sharp-shadow-md">
-            <div class="px-6 py-8 text-4xl font-bold text-[#14378A]">{{ paypal.title }}</div>
-            <div class="items-center justify-center w-full h-full px-6 py-2 flex mx-auto bg-[#14378A]">
+            <div class="px-6 py-8 text-4xl font-bold text-crimson">{{ paypal.title }}</div>
+            <div class="flex items-center justify-center w-full h-full px-6 py-2 mx-auto bg-crimson">
               <ButtonComponent
                 :label="paypal.link.label"
                 :color="{ text: 'black', bg: 'white', shadow: 'black' }"

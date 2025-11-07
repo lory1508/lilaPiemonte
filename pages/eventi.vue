@@ -1,5 +1,6 @@
 <template>
-  <div class="flex flex-col">
+  <LoaderComponent v-if="loading" />
+  <div v-else class="flex flex-col">
     <div class="flex justify-center pt-24 pb-8 bg-softWarmRed">
       <h2 class="text-5xl font-bold text-center text-white uppercase">
         I nostri eventi
@@ -9,6 +10,7 @@
       <EventCard
         v-for="event in events"
         :key="event.id"
+        :event="event"
         :cover="event.cover"
         :title="event.title"
         :date="event.date"
@@ -29,23 +31,6 @@
 
   const params = {
     populate: "*",
-  };
-
-  const googleCalendarLink = (event) => {
-    const start = new Date(event.calendarStart)
-      .toISOString()
-      .replace(/-|:|\.\d\d\d/g, "");
-    const end = new Date(event.calendarEnd).toISOString().replace(/-|:|\.\d\d\d/g, "");
-
-    const params = new URLSearchParams({
-      action: "TEMPLATE",
-      text: event.title,
-      dates: `${start}/${end}`,
-      details: event.description || "",
-      location: event.location || "",
-    });
-
-    return `https://calendar.google.com/calendar/render?${params.toString()}`;
   };
 
   onMounted(async () => {

@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col">
-    <div v-if="loading">LOADING!</div>
+  <div class="flex flex-col bg-red-700">
+    <LoaderComponent v-if="loading" />
     <div v-else class="flex flex-col">
       <!-- HERO -->
       <HeroComponent
@@ -129,10 +129,10 @@
         "populate[cards][populate]": "*",
         "populate[nextEvent][populate][event][populate]": "*",
         "populate[services][populate][services][populate]": "*",
-      }
+      };
 
-      const resStrapi = await callBE("homepage", params)
-      
+      const resStrapi = await callBE("homepage", params);
+
       hero.value = {
         title: resStrapi.data.heroSection.title,
         content: resStrapi.data.heroSection.content,

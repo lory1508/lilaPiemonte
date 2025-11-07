@@ -11,11 +11,6 @@
         "active": true
       },
       {
-        "title": "Contattaci",
-        "href": "/contattaci",
-        "active": false
-      },
-      {
         "title": "Chi siamo",
         "href": "/chi-siamo",
         "active": false
