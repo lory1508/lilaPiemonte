@@ -55,8 +55,7 @@
       >
         <div class="flex flex-col gap-2">
           <h2 class="text-5xl font-bold text-center uppercase text-deepMaroon">
-            <pre>{{ services }}</pre>
-            {{ services.title }}ssssssss
+            {{ services.title }}
           </h2>
           <div class="flex items-center justify-center text-deepMaroon">
             {{ services.subtitle }}
@@ -64,7 +63,7 @@
           <div
             class="grid items-start justify-center grid-cols-1 gap-8 px-8 py-4 lg:grid-cols-3"
           >
-            <!-- <div
+            <div
               v-for="(service, index) in services.cards"
               :key="`service_${index}`"
               class="h-full"
@@ -78,7 +77,7 @@
                 :color="service?.color"
                 :special-content="service?.specialContent"
               />
-            </div> -->
+            </div>
           </div>
         </div>
       </div>
@@ -105,7 +104,7 @@
       </div>
 
       <!-- VIDEO -->
-      <EmbeddedVideo :video-id="video.id" />
+      <EmbeddedVideo :video-id="video" />
     </div>
   </div>
 </template>
@@ -119,7 +118,7 @@
   const cards = ref("");
   const services = ref("");
   const socials = ref(data.home.socials);
-  const video = ref(data.home.video);
+  const video = ref("");
 
   onMounted(async () => {
     try {
@@ -127,8 +126,9 @@
       const config = useRuntimeConfig();
       const token = config.public.strapi.token;
 
+      console.log("Fetching homepage data from Strapi...", `${config.public.strapi.url}/api/homepage`);
       const resStrapi = await $fetch(
-        `${config.public.strapi.url}/api/homepage`,
+        `${config.public.strapi.url}api/homepage`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -182,20 +182,21 @@
         specialContent: card.specialContent,
       }));
 
-      console.log(resStrapi.data.services);
       services.value = {
         title: "Cosa facciamo",
         subtitle: "Quali servizi offriamo",
-        cards: resStrapi.data.services.cards.map((service) => ({
+        cards: resStrapi.data.services.services.map((service) => ({
           title: service.title,
           subtitle: service.subtitle,
           content: service.content,
-          img: service.image?.url || "",
+          img: service.cover?.url || "",
           link: service.link,
           color: service.color,
           specialContent: service.specialContent,
         })),
       };
+
+      video.value = resStrapi.data.video;
     } catch (error) {
       console.error("Error during loading:", error);
     } finally {
