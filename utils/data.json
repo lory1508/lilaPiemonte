@@ -141,9 +141,9 @@
           "title": "Counseling peer to peer",
           "subtitle": "Vuoi parlarci di persona?",
           "content": [
-            "Se preferisci incontrarci di persona mandaci una mail all'indirizzo infoaids@lilapiemonte.org e concorderemo un appuntamento per farti incontrare con uno dei nostri volontari per chiarire tutti i dubbi che hai e analizzare insieme la situazione.",
+            "Se preferisci incontrarci di persona mandaci una mail all'indirizzo info@lilapiemonte.org e concorderemo un appuntamento per farti incontrare con uno dei nostri volontari per chiarire tutti i dubbi che hai e analizzare insieme la situazione.",
             "LILA Piemonte, fin dalla nascita, ha attivo un centralino telefonico fin dalla nascita dell'Associazione che gestisce le richieste di informazione sull'AIDS, difesa dei diritti, orientamento ai Servizi e di sostegno psicologico attraverso una formazione continua degli operatori.",
-            "Hai dei dubbi o delle domande sull'HIV ma non vuoi o non puoi parlarne al telefono? Puoi contattare i nostri volontari anche tramite mail scrivendo a infoaids@lilapiemonte.org"
+            "Hai dei dubbi o delle domande sull'HIV ma non vuoi o non puoi parlarne al telefono? Puoi contattare i nostri volontari anche tramite mail scrivendo a info@lilapiemonte.org"
           ],
           "color": "deepMaroon"
         },
@@ -233,8 +233,8 @@
         },
         {
           "type": "gmail",
-          "href": "mailto:infoaids@lilapiemonte.org",
-          "text": "infoaids@lilapiemonte.org",
+          "href": "mailto:info@lilapiemonte.org",
+          "text": "info@lilapiemonte.org",
           "icon": "skill-icons:gmail-light",
           "color": "#c5221f"
         }
