@@ -126,9 +126,8 @@
       const config = useRuntimeConfig();
       const token = config.public.strapi.token;
 
-      console.log("Fetching homepage data from Strapi...", `${config.public.strapi.url}/api/homepage`);
       const resStrapi = await $fetch(
-        `${config.public.strapi.url}api/homepage`,
+        `${config.public.strapi.url}/api/homepage`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
