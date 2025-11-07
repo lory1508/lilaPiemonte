@@ -29,7 +29,7 @@ const callBE = async (endpoint, params={}) => {
     const config = useRuntimeConfig();
     const token = config.public.strapi.token;
 
-    const resStrapi = await $fetch(`${config.public.strapi.url}api/${endpoint}`, {
+    const resStrapi = await $fetch(`${config.public.strapi.url}/api/${endpoint}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
