@@ -113,6 +113,18 @@
   import data from "~/utils/data.json";
   import { callBE } from "#imports";
 
+  useHead({
+  title: "LILA Piemonte - Associazione per la Lotta contro l'AIDS",
+  meta: [
+    { name: 'description', content: "Con LILA Piemonte trovi informazione, test HIV gratuito e supporto per vivere bene con l'HIV. Insieme contro l'AIDS, per una comunità più consapevole in tutto il Piemonte" },
+  ],
+  bodyAttrs: {
+    class: 'test',
+  },
+  script: [{ innerHTML: 'console.log(\'Hello world\')' }],
+})
+
+
   const loading = ref(false);
   const hero = ref("");
   const nextEvent = ref("");
@@ -171,7 +183,8 @@
         link: card.link,
         color: card.color,
         specialContent: card.specialContent,
-      }));
+        position: card.position,
+      })).sort((a, b) => a.position - b.position);
 
       services.value = {
         title: "Cosa facciamo",
