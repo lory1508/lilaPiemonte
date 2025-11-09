@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col items-center justify-center h-full max-w-lg text-black bg-white border border-black min-w-80 sharp-shadow-lg"
+    class="flex flex-col items-center justify-center w-full h-full text-black bg-white border border-black min-w-80 sharp-shadow-lg"
   >
     <div class="flex flex-col items-center justify-center p-2 text-center lg:text-start lg:flex-row">
       <img v-if="img" :src="img" class="h-40" />

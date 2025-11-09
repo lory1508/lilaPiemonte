@@ -63,21 +63,21 @@
           <div
             class="grid items-start justify-center grid-cols-1 gap-8 px-8 py-4 lg:grid-cols-3"
           >
-            <div
+            <!-- <div
+              class="h-full"
+            > -->
+            <ServiceCard
               v-for="(service, index) in services.cards"
               :key="`service_${index}`"
-              class="h-full"
-            >
-              <ServiceCard
-                :title="service?.title"
-                :subtitle="service?.subtitle"
-                :content="service?.content"
-                :img="service?.img"
-                :link="service?.link"
-                :color="service?.color"
-                :special-content="service?.specialContent"
-              />
-            </div>
+              :title="service?.title"
+              :subtitle="service?.subtitle"
+              :content="service?.content"
+              :img="service?.img"
+              :link="service?.link"
+              :color="service?.color"
+              :special-content="service?.specialContent"
+            />
+            <!-- </div> -->
           </div>
         </div>
       </div>
@@ -87,13 +87,13 @@
         class="flex flex-col items-center justify-center w-full gap-4 px-4 py-8 text-center bg-crimson"
       >
         <div class="text-4xl font-bold text-white uppercase">
-          {{ socials.title }}
+          rimani aggiornato sui nostri canali
         </div>
         <div
           class="flex flex-col items-center justify-center gap-8 lg:flex-row"
         >
           <SocialLink
-            v-for="(link, index) in socials.links"
+            v-for="(link, index) in socials"
             :key="`socialLink_${index}`"
             :href="link.href"
             :text="link.text"
@@ -110,40 +110,45 @@
 </template>
 
 <script setup>
-  import data from "~/utils/data.json";
-  import { callBE } from "#imports";
+  import { callBE, CONSTANTS } from "#imports";
 
   useHead({
-  title: "LILA Piemonte - Associazione per la Lotta contro l'AIDS",
-  meta: [
-    { name: 'description', content: "Con LILA Piemonte trovi informazione, test HIV gratuito e supporto per vivere bene con l'HIV. Insieme contro l'AIDS, per una comunità più consapevole in tutto il Piemonte" },
-  ],
-  bodyAttrs: {
-    class: 'test',
-  },
-  script: [{ innerHTML: 'console.log(\'Hello world\')' }],
-})
-
+    title: "LILA Piemonte - Associazione per la Lotta contro l'AIDS",
+    meta: [
+      {
+        name: "description",
+        content:
+          "Con LILA Piemonte trovi informazione, test HIV gratuito e supporto per vivere bene con l'HIV. Insieme contro l'AIDS, per una comunità più consapevole in tutto il Piemonte",
+      },
+    ],
+    bodyAttrs: {
+      class: "test",
+    },
+    script: [{ innerHTML: "console.log('Hello world')" }],
+  });
 
   const loading = ref(false);
   const hero = ref("");
   const nextEvent = ref("");
   const cards = ref("");
   const services = ref("");
-  const socials = ref(data.home.socials);
+  const socials = ref([]);
   const video = ref("");
 
   onMounted(async () => {
     try {
       loading.value = true;
-      const params = {
+      const paramsHome = {
         "populate[heroSection][populate]": "*",
         "populate[cards][populate]": "*",
         "populate[nextEvent][populate][event][populate]": "*",
         "populate[services][populate][services][populate]": "*",
       };
+      const paramsSocials = {
+        "populate": "*",
+      };
 
-      const resStrapi = await callBE("homepage", params);
+      const resStrapi = await callBE("homepage", paramsHome);
 
       hero.value = {
         title: resStrapi.data.heroSection.title,
@@ -176,15 +181,17 @@
         },
       };
 
-      cards.value = resStrapi.data.cards.map((card) => ({
-        title: card.title,
-        content: card.content,
-        img: card.image?.url || "",
-        link: card.link,
-        color: card.color,
-        specialContent: card.specialContent,
-        position: card.position,
-      })).sort((a, b) => a.position - b.position);
+      cards.value = resStrapi.data.cards
+        .map((card) => ({
+          title: card.title,
+          content: card.content,
+          img: card.image?.url || "",
+          link: card.link,
+          color: card.color,
+          specialContent: card.specialContent,
+          position: card.position,
+        }))
+        .sort((a, b) => a.position - b.position);
 
       services.value = {
         title: "Cosa facciamo",
@@ -199,6 +206,17 @@
           specialContent: service.specialContent,
         })),
       };
+
+      const resSocials = await callBE("socials", paramsSocials);
+      resSocials.data.forEach((social) => {
+        socials.value.push({
+          href: social.href,
+          text: social.text,
+          icon: CONSTANTS[`${social.type.toUpperCase()}_LOGO`],
+          type: social.type,
+          color: CONSTANTS[`${social.type.toUpperCase()}_COLOR`],
+        });
+      });
 
       video.value = resStrapi.data.video;
     } catch (error) {
