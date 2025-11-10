@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col">
     <div class="flex justify-center pt-24 pb-8 bg-softWarmRed">
-      <h2 class="text-5xl font-bold text-center text-white uppercase">{{ sostienici.title }}</h2>
+      <h1 class="text-5xl font-bold text-center text-white uppercase">{{ sostienici.title }}</h1>
     </div>
     <div class="flex flex-col gap-4 px-6 py-8 text-black bg-white">
       <span v-for="(item, index) in sostienici.contentUp" :key="`content_up_${index}`" v-html="item" />
@@ -66,6 +66,17 @@
   import { goto } from '~/utils'
   import { Icon } from '@iconify/vue'
   import data from '~/utils/data.json'
+
+  useHead({
+    title: "Sostieni LILA Piemonte | Donazioni e 5x1000 a Torino",
+    meta: [
+      {
+        name: "description",
+        content:
+          "Aiuta LILA Piemonte a Torino e provincia: dona ora o scegli il 5x1000 per sostenere la prevenzione HIV e la difesa dei diritti in tutto il Piemonte.",
+      },
+    ],
+  });
 
   const sostienici = ref(data.sostienici)
 

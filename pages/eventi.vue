@@ -2,9 +2,9 @@
   <LoaderComponent v-if="loading" />
   <div v-else class="flex flex-col h-full bg-amber-100">
     <div class="flex justify-center pt-24 pb-8 bg-softWarmRed">
-      <h2 class="text-5xl font-bold text-center text-white uppercase">
+      <h1 class="text-5xl font-bold text-center text-white uppercase">
         I nostri eventi
-      </h2>
+      </h1>
     </div>
     <div class="flex flex-wrap justify-center gap-8 p-6 ">
       <EventCard
@@ -33,6 +33,17 @@
 
 <script setup>
   import { callBE } from "#imports";
+
+  useHead({
+    title: "Eventi LILA Piemonte | Prevenzione HIV a Torino e Provincia",
+    meta: [
+      {
+        name: "description",
+        content:
+          "Partecipa agli eventi di LILA Piemonte a Torino e provincia: campagne HIV, test rapidi, incontri e iniziative per la salute e la prevenzione.",
+      },
+    ],
+  });
 
   const events = ref([]);
   const loading = ref(false);

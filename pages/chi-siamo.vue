@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col">
     <div class="flex justify-center pt-24 pb-8 bg-softWarmRed">
-      <h2 class="text-5xl font-bold text-center text-white uppercase">{{ chiSiamo.title }}</h2>
+      <h1 class="text-5xl font-bold text-center text-white uppercase">{{ chiSiamo.title }}</h1>
     </div>
     <div class="flex flex-col gap-4 px-6 py-8 text-black bg-white">
       <span v-for="(item, index) in chiSiamo.content" :key="`content_${index}`" v-html="item" />
@@ -48,6 +48,17 @@
   import { goto } from '~/utils'
   import { Icon } from '@iconify/vue'
   import data from '~/utils/data.json'
+
+  useHead({
+    title: "LILA Piemonte | Associazione contro l'HIV e per i Diritti",
+    meta: [
+      {
+        name: "description",
+        content:
+          "LILA Piemonte è un'associazione di volontariato a Torino che promuove la prevenzione HIV, tutela i diritti e sostiene le persone sieropositive in tutto il Piemonte.",
+      },
+    ],
+  });
 
   const chiSiamo = ref(data.chiSiamo)
 </script>
