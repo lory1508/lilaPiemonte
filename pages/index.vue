@@ -121,10 +121,6 @@
           "Con LILA Piemonte trovi informazione, test HIV gratuito e supporto per vivere bene con l'HIV. Insieme contro l'AIDS, per una comunità più consapevole in tutto il Piemonte",
       },
     ],
-    bodyAttrs: {
-      class: "test",
-    },
-    script: [{ innerHTML: "console.log('Hello world')" }],
   });
 
   const loading = ref(false);

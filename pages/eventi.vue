@@ -1,12 +1,12 @@
 <template>
   <LoaderComponent v-if="loading" />
-  <div v-else class="flex flex-col">
+  <div v-else class="flex flex-col h-full bg-amber-100">
     <div class="flex justify-center pt-24 pb-8 bg-softWarmRed">
       <h2 class="text-5xl font-bold text-center text-white uppercase">
         I nostri eventi
       </h2>
     </div>
-    <div class="flex flex-wrap justify-center gap-8 p-6 bg-amber-50">
+    <div class="flex flex-wrap justify-center gap-8 p-6 ">
       <EventCard
         v-for="event in events"
         :key="event.id"
@@ -20,6 +20,14 @@
         :location="event.location.address"
       />
     </div>
+    <PaginationComponent 
+      :total="total"
+      :perPage="perPage"
+      :currentPage="currentPage"
+      :perPageOptions="[2, 10, 20, 30]"
+      @pageChange="handlePageChange"
+    />
+      <!-- :rowsPerPageOptions="rowsPerPageOptions" -->
   </div>
 </template>
 
@@ -28,15 +36,20 @@
 
   const events = ref([]);
   const loading = ref(false);
+  const currentPage = ref(1);
+  const perPage = ref(10);
+  const total = ref(0);
 
-  const params = {
+  const params = ref({
     populate: "*",
-  };
+  });
 
-  onMounted(async () => {
+  const getEvents = async () => {
     try {
       loading.value = true;
-      const resStrapi = await callBE("events", params);
+      const pagination = `pagination[page]=${currentPage.value}&pagination[pageSize]=${perPage.value}`
+      const resStrapi = await callBE(`events?${pagination}`, params.value);
+      total.value = resStrapi.meta.pagination.total
       resStrapi.data.forEach((e) => {
         events.value.push({
           cover: e.cover?.url || "",
@@ -62,7 +75,18 @@
     } finally {
       loading.value = false;
     }
+  }
+
+  onMounted(async () => {
+    await getEvents();
   });
+
+  const handlePageChange = async (page, itemsPerPage) => {
+    currentPage.value = page;
+    perPage.value = itemsPerPage;
+    events.value = [];
+    await getEvents();
+  };
 </script>
 
 <style></style>
