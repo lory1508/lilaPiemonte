@@ -22,11 +22,6 @@
     ],
     "linksRight": [
       {
-        "title": "Eventi",
-        "href": "/eventi",
-        "active": false
-      },
-      {
         "title": "Volontariato",
         "href": "/volontariato",
         "active": false
