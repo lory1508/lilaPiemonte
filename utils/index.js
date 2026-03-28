@@ -33,22 +33,4 @@ const goto = async (href, target = "_self") => {
   }
 };
 
-const callBE = async (endpoint, params={}) => {
-  try {
-    if (!endpoint) throw new Error("Endpoint is required");
-
-    const config = useRuntimeConfig();
-    const token = config.public.strapi.token;
-
-    const resStrapi = await $fetch(`${config.public.strapi.url}/api/${endpoint}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      params
-    });
-    return resStrapi;
-  } catch (error) {
-    console.error("Error during API call:", error);
-  }
-};
-export { goto, callBE, CONSTANTS };
+export { goto, CONSTANTS };

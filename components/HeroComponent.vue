@@ -10,7 +10,11 @@
       >
         <h1 class="text-6xl font-bold uppercase">{{ title }}</h1>
         <div class="flex flex-col gap-4">
-          <div v-for="(item, index) in content" :key="`hero_content_${index}`" v-html="item.children[0].text" />
+          <div
+            v-for="(item, index) in content"
+            :key="`hero_content_${index}`"
+            v-html="item"
+          />
           <!-- <pre>{{ content }}</pre> -->
         </div>
       </div>
@@ -22,19 +26,19 @@
   const props = defineProps({
     backgroundImg: {
       type: String,
-      default: '',
+      default: "",
     },
     backgroundColor: {
       type: String,
-      default: 'bg-white',
+      default: "bg-white",
     },
     title: {
       type: String,
-      default: '',
+      default: "",
     },
     content: {
       type: Array,
       default: () => [],
     },
-  })
+  });
 </script>

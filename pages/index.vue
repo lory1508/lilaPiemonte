@@ -11,7 +11,7 @@
       />
 
       <!-- NEXT EVENT -->
-      <div
+      <!-- <div
         class="flex flex-col items-center justify-center w-full gap-4 px-4 py-8 bg-paleRed"
       >
         <h2 class="text-5xl font-bold text-center uppercase text-crimson">
@@ -27,7 +27,7 @@
           :btn-label="nextEvent.event.button"
           :location="nextEvent.event.location.address"
         />
-      </div>
+      </div> -->
 
       <!-- CARDS -->
       <div
@@ -110,7 +110,8 @@
 </template>
 
 <script setup>
-  import { callBE, CONSTANTS } from "#imports";
+  import { CONSTANTS } from "#imports";
+  import data from "~/utils/data.json";
 
   useHead({
     title: "LILA Piemonte - Associazione per la Lotta contro l'AIDS",
@@ -125,7 +126,7 @@
 
   const loading = ref(false);
   const hero = ref("");
-  const nextEvent = ref("");
+  // const nextEvent = ref("");
   const cards = ref("");
   const services = ref("");
   const socials = ref([]);
@@ -134,54 +135,45 @@
   onMounted(async () => {
     try {
       loading.value = true;
-      const paramsHome = {
-        "populate[heroSection][populate]": "*",
-        "populate[cards][populate]": "*",
-        "populate[nextEvent][populate][event][populate]": "*",
-        "populate[services][populate][services][populate]": "*",
-      };
-      const paramsSocials = {
-        "populate": "*",
-      };
-
-      const resStrapi = await callBE("homepage", paramsHome);
 
       hero.value = {
-        title: resStrapi.data.heroSection.title,
-        content: resStrapi.data.heroSection.content,
-        imgBackground: resStrapi.data.heroSection.background.url,
+        title: data.home.hero.title,
+        content: data.home.hero.content,
+        imgBackground: data.home.hero.imgBackground,
       };
 
-      nextEvent.value = {
-        title: resStrapi.data.nextEvent.title,
-        event: {
-          cover: resStrapi.data.nextEvent.event.cover?.url || "",
-          title: resStrapi.data.nextEvent.event.title,
-          date: new Date(
-            resStrapi.data.nextEvent.event.start
-          ).toLocaleDateString("it-IT"),
-          startTime: new Date(
-            resStrapi.data.nextEvent.event.start
-          ).toLocaleTimeString("it-IT", {
-            hour: "2-digit",
-            minute: "2-digit",
-          }),
-          endTime: new Date(
-            resStrapi.data.nextEvent.event.end
-          ).toLocaleTimeString("it-IT", {
-            hour: "2-digit",
-            minute: "2-digit",
-          }),
-          button: resStrapi.data.nextEvent.event.button,
-          location: resStrapi.data.nextEvent.event.location,
-        },
-      };
+      // nextEvent.value = {
+      //   title: data.nextEvent.title,
+      //   event: {
+      //     cover: data.nextEvent.event.cover?.url || "",
+      //     title: data.nextEvent.event.title,
+      //     date: new Date(data.nextEvent.event.start).toLocaleDateString(
+      //       "it-IT"
+      //     ),
+      //     startTime: new Date(data.nextEvent.event.start).toLocaleTimeString(
+      //       "it-IT",
+      //       {
+      //         hour: "2-digit",
+      //         minute: "2-digit",
+      //       }
+      //     ),
+      //     endTime: new Date(data.nextEvent.event.end).toLocaleTimeString(
+      //       "it-IT",
+      //       {
+      //         hour: "2-digit",
+      //         minute: "2-digit",
+      //       }
+      //     ),
+      //     button: data.nextEvent.event.button,
+      //     location: data.nextEvent.event.location,
+      //   },
+      // };
 
-      cards.value = resStrapi.data.cards
+      cards.value = data.home.cards
         .map((card) => ({
           title: card.title,
           content: card.content,
-          img: card.image?.url || "",
+          img: card.img || "",
           link: card.link,
           color: card.color,
           specialContent: card.specialContent,
@@ -192,19 +184,18 @@
       services.value = {
         title: "Cosa facciamo",
         subtitle: "Quali servizi offriamo",
-        cards: resStrapi.data.services.services.map((service) => ({
+        cards: data.home.services.cards.map((service) => ({
           title: service.title,
           subtitle: service.subtitle,
           content: service.content,
-          img: service.cover?.url || "",
+          img: service.img || "",
           link: service.link,
           color: service.color,
           specialContent: service.specialContent,
         })),
       };
 
-      const resSocials = await callBE("socials", paramsSocials);
-      resSocials.data.forEach((social) => {
+      data.home.socials.links.forEach((social) => {
         socials.value.push({
           href: social.href,
           text: social.text,
@@ -214,7 +205,7 @@
         });
       });
 
-      video.value = resStrapi.data.video;
+      video.value = data.video;
     } catch (error) {
       console.error("Error during loading:", error);
     } finally {

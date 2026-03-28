@@ -73,7 +73,7 @@
         "color": "deepMaroon",
         "title": "PayPal",
         "content": [
-"Ogni contributo è un gesto concreto che ci permette di portare avanti le nostre attività. Con una donazione su PayPal puoi aiutarci a garantire ascolto, accoglienza e sostegno, e a diffondere una cultura di rispetto e solidarietà. Anche una piccola cifra può fare la differenza: ci aiuterai a mantenere vivi i servizi, i progetti e le attività che ogni giorno portiamo avanti con impegno e passione. Dona ora con PayPal e sostieni LILA Piemonte."
+          "Ogni contributo è un gesto concreto che ci permette di portare avanti le nostre attività. Con una donazione su PayPal puoi aiutarci a garantire ascolto, accoglienza e sostegno, e a diffondere una cultura di rispetto e solidarietà. Anche una piccola cifra può fare la differenza: ci aiuterai a mantenere vivi i servizi, i progetti e le attività che ogni giorno portiamo avanti con impegno e passione. Dona ora con PayPal e sostieni LILA Piemonte."
         ],
         "link": {
           "label": "Fai una donazione con PayPal",
@@ -88,11 +88,7 @@
           "Chiediamo il tuo contributo per continuare a svolgere le nostre attività di informazione e prevenzione, promuovere il diritto alla salute, sviluppare campagne di sensibilizzazione, tutelare i diritti di persone con HIV o malate di AIDS e offrire un servizio di counseling telefonico, per fare tutto questo abbiamo bisogno di TE",
           "Per donarci il 5x1000 scrivi il codice fiscale"
         ],
-        "specialContent": "97536790013",
-        "link": {
-          "label": "Scopri di più",
-          "href": "/dona-5-x-1000"
-        }
+        "specialContent": "97536790013"
       },
       {
         "color": "deepMaroon",
@@ -191,7 +187,7 @@
           ],
           "link": {
             "text": "Controlla i prossimi eventi",
-            "href": "/eventi/test-rapidi"
+            "href": "https://www.instagram.com/lilapiemonteodv/"
           },
           "color": "deepMaroon"
         },
@@ -227,7 +223,7 @@
         {
           "type": "instagram",
           "text": "instagram",
-          "href": "https://www.instagram.com/lilapiemonte/",
+          "href": "https://www.instagram.com/lilapiemonteodv/",
           "icon": "skill-icons:instagram",
           "color": "#ea4968"
         },

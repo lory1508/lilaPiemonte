@@ -2,7 +2,7 @@
   <iframe
     width="100%"
     height="800px"
-    :src="`https://www.youtube.com/embed/${videoId}`"
+    :src="`https://www.youtube.com/embed/${videoId}?si=gvlcOutc6mNeXJ0Y`"
     title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -15,7 +15,7 @@
   const props = defineProps({
     videoId: {
       type: String,
-      default: '',
+      default: "",
     },
-  })
+  });
 </script>

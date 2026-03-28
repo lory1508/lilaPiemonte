@@ -1,16 +1,30 @@
 <template>
   <div
-    class="flex flex-col items-center justify-center h-full max-w-lg text-black bg-white border border-black sharp-shadow-lg "
+    class="flex flex-col items-center justify-center h-full max-w-lg text-black bg-white border border-black sharp-shadow-lg"
   >
-    <span class="py-12 text-4xl font-semibold uppercase" :class="`text-${color}`">{{ title }}</span>
-    <div class="flex flex-col items-center justify-center w-full h-full gap-4 p-4 text-white" :class="`bg-${color}`">
+    <span
+      class="py-12 text-4xl font-semibold uppercase"
+      :class="`text-${color}`"
+      >{{ title }}</span
+    >
+    <div
+      class="flex flex-col items-center justify-center w-full h-full gap-4 p-4 text-white"
+      :class="`bg-${color}`"
+    >
       <div v-if="content" class="flex flex-col gap-4 text-sm">
-        <div v-for="(item, index) in content" :key="`hero_content_${index}`" v-html="item.children[0].text" />
+        <div
+          v-for="(item, index) in content"
+          :key="`hero_content_${index}`"
+          v-html="item"
+        />
       </div>
-      <div v-if="specialContent" class="flex items-center justify-center text-3xl font-semibold">
+      <div
+        v-if="specialContent"
+        class="flex items-center justify-center text-3xl font-semibold"
+      >
         {{ specialContent }}
       </div>
-      <img v-if="img" :src="img" width="300" />
+      <img v-if="img" :src="img.url" :alt="img.alt" width="300" />
       <ButtonComponent
         v-if="link"
         :label="link.label"
@@ -23,11 +37,11 @@
 </template>
 
 <script setup>
-  import { goto } from '~/utils'
+  import { goto } from "~/utils";
   const props = defineProps({
     title: {
       type: String,
-      default: '',
+      default: "",
     },
     content: {
       type: Array,
@@ -43,29 +57,29 @@
     },
     color: {
       type: String,
-      default: 'crimson',
+      default: "crimson",
     },
     specialContent: {
       type: String,
-      default: '',
+      default: "",
     },
-  })
+  });
 
-  const slug = ref('')
+  const slug = ref("");
 
   const slugify = (str) => {
     return str
       .toLowerCase()
       .trim()
-      .replace(/[^\w\s-]/g, '') // remove non-word, non-space, non-hyphen characters
-      .replace(/[\s_-]+/g, '-') // replace space, underscore and hyphen characters with a single hyphen
-      .replace(/^-+/, '') // trim leading hyphens
-      .replace(/-+$/, '')
-  }
+      .replace(/[^\w\s-]/g, "") // remove non-word, non-space, non-hyphen characters
+      .replace(/[\s_-]+/g, "-") // replace space, underscore and hyphen characters with a single hyphen
+      .replace(/^-+/, "") // trim leading hyphens
+      .replace(/-+$/, "");
+  };
 
   onMounted(() => {
-    slug.value = slugify(props.title)
-  })
+    slug.value = slugify(props.title);
+  });
 </script>
 
 <style>
