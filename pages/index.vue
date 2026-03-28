@@ -205,7 +205,7 @@
         });
       });
 
-      video.value = data.video;
+      video.value = data.home.video.id;
     } catch (error) {
       console.error("Error during loading:", error);
     } finally {
