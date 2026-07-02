@@ -244,9 +244,31 @@
     ],
     "btnStatuto": {
       "title": "Leggi il nostro statuto",
-      "href": "/docs/StatutoLILA_Piemonte.pdf"
+      "href": "/docs/STATUTO NUOVO 2026_AG ENTRATE.pdf"
     },
     "rendiconto": [
+      {
+        "year": 2025,
+        "nota": {
+          "title": "Nota del rendiconto economico",
+          "href": "/docs/2025/NOTA-AL-RENDICONTO-ECONOMICO.pdf"
+        },
+        "rendiconto": {
+          "title": "Rendiconto economico",
+          "href": "/docs/2025/Rendiconto.pdf"
+        }
+      },
+      {
+        "year": 2024,
+        "nota": {
+          "title": "Nota del rendiconto economico",
+          "href": "/docs/2024/NOTA-AL-RENDICONTO-ECONOMICO.pdf"
+        },
+        "rendiconto": {
+          "title": "Rendiconto economico",
+          "href": "/docs/2024/Rendiconto.pdf"
+        }
+      },
       {
         "year": 2023,
         "nota": {
